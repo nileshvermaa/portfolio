@@ -125,7 +125,7 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div className="mt-8 flex gap-4">
-                   <a href="/NileshResume.pdf" download className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
+                   <a href="/Nilesh_Verma_Resume.doc" download className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
                       Download Resume
                    </a>
                    <a href="https://github.com/nileshcf" target="_blank" rel="noreferrer" className="bg-white/10 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
