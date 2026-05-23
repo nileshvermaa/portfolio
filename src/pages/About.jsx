@@ -181,7 +181,7 @@ const About = () => {
         {[
           ["email",    "nileshvermaq@gmail.com", "mailto:nileshvermaq@gmail.com"],
           ["github",   "github.com/nileshcf",          "https://github.com/nileshcf"],
-          ["linkedin", "linkedin.com/in/nileshcf",     "https://www.linkedin.com/in/nileshcf/"],
+          ["linkedin", "linkedin.com/in/nileshvermaa",     "https://www.linkedin.com/in/nileshvermaa/"],
           ["resume",   "wget resume.pdf",              "/NileshResume.pdf"],
         ].map(([key, label, href]) => (
           <div key={key} className="flex gap-2">

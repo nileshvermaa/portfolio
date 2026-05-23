@@ -359,9 +359,9 @@ const ContactMe = () => {
             label="github.com/nileshcf"
           />
           <SocialBtn
-            href="https://www.linkedin.com/in/nileshcf/"
+            href="https://www.linkedin.com/in/nileshvermaa/"
             icon={Linkedin}
-            label="linkedin.com/in/nileshcf"
+            label="linkedin.com/in/nileshvermaa"
           />
         </div>
         <div className="font-mono text-xs text-retro-fg-dim px-3 pb-2">

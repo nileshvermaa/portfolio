@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nileshverma.vercel.app/</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/about</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/projects</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/timeline</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/timeline</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/contact</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/privacy</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://nileshverma.vercel.app/terms</loc>
+    <loc>https://portfolio-nileshcfs-projects.vercel.app/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

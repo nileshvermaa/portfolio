@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /love
 
-Sitemap: https://nileshverma.vercel.app/sitemap.xml
+Sitemap: https://portfolio-nileshcfs-projects.vercel.app/sitemap.xml

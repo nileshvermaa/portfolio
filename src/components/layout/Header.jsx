@@ -79,7 +79,7 @@ const MENUS = [
     items: [
       { label: "Send message", to: "/contact" },
       { label: "GitHub", href: "https://github.com/nileshcf" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/nileshcf/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/nileshvermaa/" },
     ],
   },
   {

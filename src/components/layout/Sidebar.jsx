@@ -71,7 +71,7 @@ const Sidebar = () => {
             ◀ <a href="https://github.com/nileshcf" target="_blank" rel="noreferrer">GitHub</a>
           </li>
           <li>
-            ● <a href="https://www.linkedin.com/in/nileshcf/" target="_blank" rel="noreferrer">LinkedIn</a>
+            ● <a href="https://www.linkedin.com/in/nileshvermaa/" target="_blank" rel="noreferrer">LinkedIn</a>
           </li>
           <li>
             ▶ <a href="mailto:nileshvermaq@gmail.com">/usr/mail</a>

@@ -211,8 +211,8 @@ const ContactOutput = () => (
       ["github", "github.com/nileshcf", "https://github.com/nileshcf"],
       [
         "linkedin",
-        "linkedin.com/in/nileshcf",
-        "https://www.linkedin.com/in/nileshcf/",
+        "linkedin.com/in/nileshvermaa",
+        "https://www.linkedin.com/in/nileshvermaa/",
       ],
       ["form", "nilesh.sys/contact", "/contact"],
     ].map(([key, label, href]) => (
@@ -347,7 +347,7 @@ const HIRE_LINES = [
   { t: "", delay: 4400 },
   { t: "Next steps:", delay: 4600 },
   { t: "  → Email:    nileshvermaq@gmail.com", delay: 4800, c: "link" },
-  { t: "  → LinkedIn: linkedin.com/in/nileshcf", delay: 5000, c: "link" },
+  { t: "  → LinkedIn: linkedin.com/in/nileshvermaa", delay: 5000, c: "link" },
   { t: "  → Form:     nilesh.sys/contact", delay: 5200, c: "link" },
   { t: "", delay: 5400 },
   {
