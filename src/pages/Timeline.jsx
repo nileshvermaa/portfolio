@@ -1,49 +1,130 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import TimelineItem from '../components/Timeline/TimelineItem';
-import './Timeline.css';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, ChevronDown } from "lucide-react";
+import BeveledPanel from "../components/ui/BeveledPanel";
+import { timeline } from "../content/timeline";
+import { useSeoMeta } from "../hooks/useSeoMeta";
 
-const timelineData = [
-  { year: '2025 - 2027', title: 'MBA in Progress – IIT Patna', description: 'Pursuing MBA at Indian Institute of Technology, Patna.', type: 'education' },
-  { year: '2023 - Present', title: 'DevOps Engineer – Cloudframe', description: 'Leading deployments with Jenkins, Docker, and Azure.', type: 'work' },
-  { year: '2019 - 2022', title: 'Graduated B.E. – NMIT Bengaluru', description: 'GPA 9.07 | Published a paper with Springer.', type: 'graduation' },
-  { year: '2022 – 2023', title: 'Internship – CRIS (Railways)', description: 'Deployed Java-based applications under Govt. projects.', type: 'internship' },
-  { year: '2017', title: 'Completed XII – CBSE', description: 'PCM-CS | Jagran Public School, Lucknow.', type: 'school' },
-  { year: '2015', title: '10th Grade – CBSE', description: 'Perfect GPA: 10 | Jagran Public School, Lucknow.', type: 'school' }
-];
+const SEVERITY_STYLE = {
+  MILESTONE: { color: "#ff00ff", label: "[MILESTONE]" },
+  ACHIEVEMENT: { color: "#ffff00", label: "[ACHIEVEMENT]" },
+  INFO: { color: "var(--retro-fg-dim)", label: "[INFO]     " },
+};
+
+const TYPE_ICON = {
+  work:       "⚙",
+  education:  "📚",
+  graduation: "🎓",
+  internship: "💻",
+  school:     "🏫",
+};
+
+const LogEntry = ({ entry, index }) => {
+  const [open, setOpen] = useState(false);
+  const sev = SEVERITY_STYLE[entry.severity] ?? SEVERITY_STYLE.INFO;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.3, delay: index * 0.04 }}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className={`w-full text-left flex items-start gap-1 px-2 py-[3px] font-mono text-xs sm:text-sm hover:bg-retro-chrome hover:text-retro-chrome-fg ${
+          open ? "bg-retro-chrome text-retro-chrome-fg" : ""
+        }`}
+        aria-expanded={open}
+      >
+        <span className="shrink-0 mt-[2px]" aria-hidden>
+          {open ? (
+            <ChevronDown className="w-3 h-3 inline" />
+          ) : (
+            <ChevronRight className="w-3 h-3 inline" />
+          )}
+        </span>
+        {/* Timestamp */}
+        <span className="shrink-0 text-retro-fg-dim hidden sm:inline">
+          [{entry.date}]
+        </span>
+        {/* Severity */}
+        <span className="shrink-0" style={{ color: sev.color }}>
+          {sev.label}
+        </span>
+        {/* Type icon */}
+        <span className="shrink-0" aria-hidden>
+          {TYPE_ICON[entry.type] ?? "●"}
+        </span>
+        {/* Title */}
+        <span className="text-retro-fg font-bold">{entry.title}</span>
+        {/* Year hint on mobile */}
+        <span className="text-retro-fg-dim text-xs ml-auto shrink-0 hidden xs:inline">
+          {entry.year}
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="pl-8 pr-3 py-2 bevel-in ml-4 mr-2 my-1 font-mono text-sm">
+              <div className="text-retro-fg-dim text-xs mb-1">
+                {entry.year}
+              </div>
+              <p className="text-retro-fg leading-relaxed">
+                {entry.description}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const Timeline = () => {
+  useSeoMeta({
+    title: "Timeline",
+    description: "Nilesh Verma's career log — education, work history, and key milestones in Cloud and Software Engineering.",
+    path: "/timeline",
+  });
   return (
-    <div className="min-h-screen bg-apple-dark pt-32 pb-24 px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto relative">
-        <div className="text-center mb-20">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6"
-          >
-            My <span className="text-gradient">Journey.</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-apple-gray font-medium"
-          >
-            The milestones that shape my engineering career.
-          </motion.p>
-        </div>
-
-        {/* Central glowing timeline track */}
-        <div className="absolute left-4 md:left-1/2 top-48 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
-
-        <div className="flex flex-col gap-12 relative">
-          {timelineData.map((item, index) => (
-             <TimelineItem key={index} index={index} {...item} />
-          ))}
-        </div>
+  <div className="space-y-4 py-2">
+    <BeveledPanel title="career.log — /var/log/nilesh/career.log">
+      <div className="font-mono text-xs text-retro-fg-dim mb-2 px-2">
+        $ tail -f /var/log/nilesh/career.log
       </div>
-    </div>
+
+      {/* Legend */}
+      <div className="flex flex-wrap gap-4 px-2 pb-2 border-b-2 border-retro-border-dark font-mono text-xs">
+        {Object.entries(SEVERITY_STYLE).map(([k, v]) => (
+          <span key={k} style={{ color: v.color }}>
+            {v.label.trim()}
+          </span>
+        ))}
+        <span className="text-retro-fg-dim">— click entry to expand</span>
+      </div>
+
+      {/* Log entries */}
+      <div className="mt-1">
+        {timeline.map((entry, i) => (
+          <LogEntry key={`${entry.date}-${i}`} entry={entry} index={i} />
+        ))}
+      </div>
+
+      <div className="font-mono text-xs text-retro-fg-dim px-2 pt-2 border-t-2 border-retro-border-dark mt-1">
+        {timeline.length} entries · reverse-chronological · last updated:{" "}
+        {new Date().toISOString().slice(0, 10)}
+      </div>
+    </BeveledPanel>
+  </div>
   );
 };
 

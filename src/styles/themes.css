@@ -1,0 +1,94 @@
+/* ============================================================
+   Theme tokens — three modes. Default applied on <html>.
+   Switching: set data-theme on <html> to "terminal" | "amber" | "win95".
+   ============================================================ */
+
+:root,
+[data-theme="terminal"] {
+  --retro-bg: #000000;
+  --retro-bg-alt: #050805;
+  --retro-fg: #00ff00;
+  --retro-fg-dim: #00aa00;
+  --retro-accent: #00ff00;
+  --retro-accent-alt: #ff00ff;
+  --retro-accent-cyan: #00ffff;
+  --retro-border: #00ff00;
+  --retro-border-light: #00ff00;
+  --retro-border-dark: #003300;
+  --retro-panel: #001100;
+  --retro-chrome: #001a00;
+  --retro-chrome-fg: #00ff00;
+  --retro-link: #00ffff;
+  --retro-visited: #ff00ff;
+  --retro-scan-opacity: 0.18;
+  --retro-glow: 0 0 4px #00ff00;
+  color-scheme: dark;
+}
+
+[data-theme="amber"] {
+  --retro-bg: #0a0500;
+  --retro-bg-alt: #100800;
+  --retro-fg: #ffb000;
+  --retro-fg-dim: #aa7000;
+  --retro-accent: #ffb000;
+  --retro-accent-alt: #ff7000;
+  --retro-accent-cyan: #ffd080;
+  --retro-border: #ffb000;
+  --retro-border-light: #ffb000;
+  --retro-border-dark: #4a3000;
+  --retro-panel: #1a1000;
+  --retro-chrome: #2a1800;
+  --retro-chrome-fg: #ffb000;
+  --retro-link: #ffd080;
+  --retro-visited: #ff7000;
+  --retro-scan-opacity: 0.2;
+  --retro-glow: 0 0 4px #ffb000;
+  color-scheme: dark;
+}
+
+[data-theme="mono"] {
+  --retro-bg: #ffffff;
+  --retro-bg-alt: #f0f0f0;
+  --retro-fg: #000000;
+  --retro-fg-dim: #555555;
+  --retro-accent: #000000;
+  --retro-accent-alt: #333333;
+  --retro-accent-cyan: #222222;
+  --retro-border: #000000;
+  --retro-border-light: #888888;
+  --retro-border-dark: #000000;
+  --retro-panel: #e8e8e8;
+  --retro-chrome: #cccccc;
+  --retro-chrome-fg: #000000;
+  --retro-link: #000000;
+  --retro-visited: #555555;
+  --retro-scan-opacity: 0.06;
+  --retro-glow: none;
+  color-scheme: light;
+}
+
+[data-theme="win95"] {
+  --retro-bg: #008080; /* the classic teal desktop */
+  --retro-bg-alt: #c0c0c0;
+  --retro-fg: #000000;
+  --retro-fg-dim: #404040;
+  --retro-accent: #000080;
+  --retro-accent-alt: #800080;
+  --retro-accent-cyan: #008080;
+  --retro-border: #808080;
+  --retro-border-light: #ffffff;
+  --retro-border-dark: #000000;
+  --retro-panel: #c0c0c0;
+  --retro-chrome: #000080;
+  --retro-chrome-fg: #ffffff;
+  --retro-link: #0000ee;
+  --retro-visited: #551a8b;
+  --retro-scan-opacity: 0;
+  --retro-glow: none;
+  color-scheme: light;
+}
+
+/* Scanlines opt-out flag — set data-scanlines="off" on <html> to disable */
+[data-scanlines="off"] {
+  --retro-scan-opacity: 0;
+}

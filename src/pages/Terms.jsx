@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useSeoMeta } from '../hooks/useSeoMeta';
 
 const Terms = () => {
+  useSeoMeta({ title: 'Terms', description: 'Terms and conditions for NILESH.SYS.', path: '/terms' });
   return (
     <div className="min-h-screen bg-apple-dark pt-32 pb-24 px-6 flex justify-center">
       <motion.div 

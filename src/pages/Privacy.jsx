@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useSeoMeta } from '../hooks/useSeoMeta';
 
 const Privacy = () => {
+  useSeoMeta({ title: 'Privacy', description: 'Privacy policy for NILESH.SYS.', path: '/privacy' });
   return (
     <div className="min-h-screen bg-apple-dark pt-32 pb-24 px-6 flex justify-center">
       <motion.div 

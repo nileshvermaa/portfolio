@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /love
+
+Sitemap: https://nileshverma.vercel.app/sitemap.xml

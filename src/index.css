@@ -1,26 +1,156 @@
+@import "./styles/themes.css";
+@import "./styles/animations.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    background: var(--retro-bg);
+  }
   body {
-    @apply bg-apple-dark text-apple-silver font-sans tracking-tight antialiased selection:bg-white/20 selection:text-white;
+    @apply bg-retro-bg text-retro-fg font-term antialiased;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  /* yes, really — 1998-style links */
+  a {
+    color: var(--retro-link);
+    text-decoration: underline;
+  }
+  a:visited {
+    color: var(--retro-visited);
+  }
+  a:hover {
+    color: var(--retro-accent-alt);
+  }
+  *:focus-visible {
+    outline: 2px dashed var(--retro-accent);
+    outline-offset: 2px;
+  }
+  h1, h2, h3, h4 {
+    font-family: '"Press Start 2P"', monospace;
+    line-height: 1.4;
+  }
+  ::selection {
+    background: var(--retro-accent);
+    color: var(--retro-bg);
   }
 }
 
 @layer utilities {
+  .bevel-out {
+    border: 2px solid;
+    border-color: var(--retro-border-light) var(--retro-border-dark) var(--retro-border-dark) var(--retro-border-light);
+    background: var(--retro-panel);
+  }
+  .bevel-in {
+    border: 2px solid;
+    border-color: var(--retro-border-dark) var(--retro-border-light) var(--retro-border-light) var(--retro-border-dark);
+    background: var(--retro-bg);
+  }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-apple-gray;
+    color: var(--retro-accent);
+    text-shadow: var(--retro-glow);
   }
-  
   .glass-nav {
-    @apply backdrop-blur-md bg-apple-dark/60 border-b border-white/10;
+    background: var(--retro-chrome);
+    border-bottom: 2px solid var(--retro-border-dark);
   }
-  
   .bento-card {
-    @apply bg-apple-space rounded-3xl border border-white/5 overflow-hidden relative shadow-2xl transition-all duration-300;
+    @apply bevel-out;
+    border-radius: 0;
   }
+  .ascii {
+    font-family: '"VT323"', monospace;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+}
+
+/* ── Skip link — visible only on keyboard focus ───────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 99999;
+  padding: 6px 14px;
+  background: var(--retro-chrome);
+  color: var(--retro-chrome-fg);
+  font-family: "Tahoma", "MS Sans Serif", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid;
+  border-color: var(--retro-border-light) var(--retro-border-dark) var(--retro-border-dark) var(--retro-border-light);
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 8px;
+  outline: 3px solid var(--retro-accent);
+  outline-offset: 2px;
+}
+
+/* ── Focus ring — clearly visible in all themes ───────────────── */
+:focus-visible {
+  outline: 2px dashed var(--retro-accent) !important;
+  outline-offset: 3px;
+}
+
+/* Stronger ring on interactive retro elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--retro-accent) !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--retro-bg), 0 0 0 5px var(--retro-accent);
+}
+
+/* ── Scrollbar — themed ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-border-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--retro-panel);
+  border: 2px solid;
+  border-color: var(--retro-border-light) var(--retro-border-dark) var(--retro-border-dark) var(--retro-border-light);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--retro-chrome);
+}
+::-webkit-scrollbar-corner {
+  background: var(--retro-bg);
+}
+
+/* ── Win95 text cursor in terminal areas ──────────────────────── */
+[data-theme="terminal"] .terminal-cursor,
+[data-theme="amber"] .terminal-cursor {
+  cursor: text;
+}
+
+/* ── Retro cursor for terminal/amber modes ────────────────────── */
+[data-theme="terminal"],
+[data-theme="amber"] {
+  cursor: crosshair;
+}
+[data-theme="terminal"] a,
+[data-theme="terminal"] button,
+[data-theme="terminal"] [role="button"],
+[data-theme="amber"] a,
+[data-theme="amber"] button,
+[data-theme="amber"] [role="button"] {
+  cursor: pointer;
 }

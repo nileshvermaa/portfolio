@@ -1,5 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <text x="0" y="50" font-size="50">🦖</text>
-</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
-@media (prefers-color-scheme: dark) { :root { filter: none; } }
-</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#000000"/>
+
+  <!-- Pixel-art letter "N" — 5×7 grid, each cell 8px, offset (12,8) -->
+  <!-- Col 0 = x:12, Col 1 = x:20, Col 2 = x:28, Col 3 = x:36, Col 4 = x:44 -->
+  <!-- Row 0 = y:8  …  Row 6 = y:56 -->
+
+  <!-- Row 0: ■ . . . ■ -->
+  <rect x="12" y="8"  width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="8"  width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 1: ■ ■ . . ■ -->
+  <rect x="12" y="16" width="8" height="8" fill="#ffffff"/>
+  <rect x="20" y="16" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="16" width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 2: ■ . ■ . ■ -->
+  <rect x="12" y="24" width="8" height="8" fill="#ffffff"/>
+  <rect x="28" y="24" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="24" width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 3: ■ . . ■ ■ -->
+  <rect x="12" y="32" width="8" height="8" fill="#ffffff"/>
+  <rect x="36" y="32" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="32" width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 4: ■ . . . ■ -->
+  <rect x="12" y="40" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="40" width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 5: ■ . . . ■ -->
+  <rect x="12" y="48" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="48" width="8" height="8" fill="#ffffff"/>
+
+  <!-- Row 6: ■ . . . ■ -->
+  <rect x="12" y="56" width="8" height="8" fill="#ffffff"/>
+  <rect x="44" y="56" width="8" height="8" fill="#ffffff"/>
+</svg>

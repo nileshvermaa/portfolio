@@ -1,0 +1,154 @@
+/* ============================================================
+   Retro animations — all respect prefers-reduced-motion.
+   ============================================================ */
+
+@keyframes retro-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes retro-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes retro-flicker {
+  0%, 100% { opacity: 1; }
+  47% { opacity: 1; }
+  48% { opacity: 0.88; }
+  49% { opacity: 1; }
+  51% { opacity: 0.96; }
+  52% { opacity: 1; }
+}
+
+@keyframes retro-glitch {
+  0% { transform: translate(0); text-shadow: 0 0 0 transparent; }
+  20% { transform: translate(-1px, 0); text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  40% { transform: translate(1px, 0); text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  60% { transform: translate(0, 1px); text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  80% { transform: translate(-1px, -1px); text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  100% { transform: translate(0); text-shadow: 0 0 0 transparent; }
+}
+
+.retro-blink { animation: retro-blink 1s steps(1) infinite; }
+.retro-flicker { animation: retro-flicker 4s infinite; }
+
+.retro-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: retro-marquee 30s linear infinite;
+}
+
+.retro-glitch:hover,
+.retro-glitch:focus-visible {
+  animation: retro-glitch 200ms steps(2) 1;
+}
+
+/* Scanline overlay — fixed, pointer-events none, sits above content */
+.retro-scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, var(--retro-scan-opacity, 0.15)) 0px,
+    rgba(0, 0, 0, var(--retro-scan-opacity, 0.15)) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+}
+
+.retro-crt::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* ============================================================
+   Synthwave grid — optional background. Toggled by class on <html>.
+   ============================================================ */
+
+@keyframes synthwave-grid-move {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 0 80px, 80px 0; }
+}
+
+@keyframes pixel-walk {
+  0%   { left: -64px; }
+  100% { left: 100vw; }
+}
+
+@keyframes sprite-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* Synthwave grid uses fixed magenta/cyan regardless of theme — that IS the synthwave look.
+   Sits at the bottom of the viewport behind content. */
+.synthwave-grid body {
+  background: transparent !important;
+}
+.synthwave-grid::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50vh;
+  height: 80vh;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255, 0, 200, 0.05) 0%, rgba(255, 0, 200, 0.25) 100%),
+    linear-gradient(#ff00c8 1px, transparent 1px) 0 0 / 80px 80px,
+    linear-gradient(90deg, #00e5ff 1px, transparent 1px) 0 0 / 80px 80px;
+  animation: synthwave-grid-move 6s linear infinite;
+  transform: perspective(800px) rotateX(72deg);
+  transform-origin: center top;
+}
+/* When synthwave is on, raise content above the grid pseudo-element. */
+.synthwave-grid #root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Walking pixel sprite — fixed at bottom of viewport */
+.pixel-sprite {
+  position: fixed;
+  bottom: 12px;
+  left: -64px;
+  width: 32px;
+  height: 32px;
+  z-index: 40;
+  pointer-events: none;
+  image-rendering: pixelated;
+  animation:
+    pixel-walk 24s linear infinite,
+    sprite-bob 0.4s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .synthwave-grid::before,
+  .pixel-sprite {
+    animation: none !important;
+  }
+  .pixel-sprite { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .retro-blink,
+  .retro-flicker,
+  .retro-marquee,
+  .retro-glitch:hover {
+    animation: none !important;
+  }
+}

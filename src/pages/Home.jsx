@@ -1,280 +1,375 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Github, ExternalLink, Terminal, Layers, TrendingUp, TrendingDown, Bitcoin } from 'lucide-react';
-import { SiCplusplus, SiJenkins, SiJavascript, SiPython, SiDocker, SiKubernetes, SiReact } from 'react-icons/si';
-import profilePic from '../assets/profile-placeholder.png'; // Verify if it exists
+import React, { useEffect, useState } from "react";
+import { Github, ExternalLink, TrendingUp, TrendingDown, Download } from "lucide-react";
+import { SiKubernetes, SiDocker, SiJenkins, SiReact, SiPython, SiAmazon, SiGooglecloud, SiTerraform } from "react-icons/si";
+import BeveledPanel from "../components/ui/BeveledPanel";
+import BlinkingCursor from "../components/ui/BlinkingCursor";
+import WinampWidget from "../components/ui/WinampWidget";
+import { useTypewriter } from "../hooks/useTypewriter";
+import { currently } from "../content/currently";
+import { skills } from "../content/skills";
+import Terminal from "../components/terminal/Terminal";
+import { useSeoMeta } from "../hooks/useSeoMeta";
+import profilePhoto from "../assets/Photo.jpeg";
 
-// Scroll-Triggered Typography Component
-const ScrollRevealText = ({ text }) => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({ target: container, offset: ["start 80%", "end 50%"] });
-  const words = text.split(" ");
+const VISITOR_KEY = "nilesh.sys.visitor";
+
+// ASCII art — ANSI Shadow style (Unicode box-drawing chars, monospace)
+const ASCII_NAME = `
+ ███╗   ██╗██╗██╗     ███████╗███████╗██╗  ██╗
+ ████╗  ██║██║██║     ██╔════╝██╔════╝██║  ██║
+ ██╔██╗ ██║██║██║     █████╗  ███████╗███████║
+ ██║╚██╗██║██║██║     ██╔══╝  ╚════██║██╔══██║
+ ██║ ╚████║██║███████╗███████╗███████║██║  ██║
+ ╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
+
+ ██╗   ██╗███████╗██████╗ ███╗   ███╗ █████╗
+ ██║   ██║██╔════╝██╔══██╗████╗ ████║██╔══██╗
+ ██║   ██║█████╗  ██████╔╝██╔████╔██║███████║
+ ╚██╗ ██╔╝██╔══╝  ██╔══██╗██║╚██╔╝██║██╔══██║
+  ╚████╔╝ ███████╗██║  ██║██║ ╚═╝ ██║██║  ██║
+   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝`;
+
+const TAGLINE =
+  "> WELCOME TO NILESH.SYS — CLOUD SPECIALIST // SOLUTIONS ARCHITECT // NIVEUS SOLUTIONS";
+
+const INTRO =
+  "Passionate about designing scalable cloud architectures that solve real business problems. " +
+  "I bridge the gap between infrastructure engineering and solutions architecture — " +
+  "turning complex multi-cloud requirements into elegant, cost-optimized, production-grade systems. " +
+  "Currently helping Niveus Solutions deliver cloud transformation for enterprise customers.";
+
+const SKILL_ICONS = {
+  "aws.sh": SiAmazon,
+  "gcp.sh": SiGooglecloud,
+  "kubernetes.ko": SiKubernetes,
+  "docker.sock": SiDocker,
+  "terraform.tf": SiTerraform,
+  "jenkins.groovy": SiJenkins,
+  "react.jsx": SiReact,
+  "python.py": SiPython,
+};
+
+const SkillRow = ({ name, size, perms }) => {
+  const Icon = SKILL_ICONS[name];
+  const date = "May 23 00:00";
   return (
-    <div ref={container} className="py-32 md:py-48 max-w-5xl mx-auto px-6">
-      <p className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-white flex flex-wrap gap-x-[0.5em] gap-y-[0.2em]">
-        {words.map((word, i) => {
-          const start = i / words.length;
-          const end = start + (1 / words.length);
-          const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
-          return <motion.span key={i} style={{ opacity }} className="relative">{word}</motion.span>;
-        })}
-      </p>
+    <div className="flex items-center gap-2 py-[2px] hover:bg-retro-chrome hover:text-retro-chrome-fg px-1 font-mono text-xs sm:text-sm">
+      <span className="text-retro-fg-dim shrink-0">{perms}</span>
+      <span className="text-retro-fg-dim shrink-0 w-6">1</span>
+      <span className="text-retro-accent shrink-0">nilesh</span>
+      <span className="text-retro-fg-dim shrink-0">cloud</span>
+      <span className="text-retro-fg-dim shrink-0 w-10 text-right">{size}</span>
+      <span className="text-retro-fg-dim shrink-0">{date}</span>
+      {Icon && <Icon className="shrink-0 w-3 h-3" aria-hidden="true" />}
+      <span className="text-retro-fg">{name}</span>
+    </div>
+  );
+};
+
+const CurrentlyWidget = () => (
+  <div className="font-mono text-sm space-y-1">
+    {[
+      ["📖", "reading", currently.reading],
+      ["🎓", "learning", currently.learning],
+      ["🔧", "building", currently.building],
+      ["🎵", "listening", currently.listening],
+      ["📍", "location", currently.location],
+    ].map(([icon, key, val]) => (
+      <div key={key} className="flex gap-2">
+        <span aria-hidden>{icon}</span>
+        <span className="text-retro-fg-dim">{key}:</span>
+        <span className="text-retro-fg flex-1">{val}</span>
+      </div>
+    ))}
+  </div>
+);
+
+const CryptoTicker = ({ data, loading }) => {
+  if (loading)
+    return (
+      <div className="text-retro-fg-dim font-mono text-sm">
+        Fetching market data<BlinkingCursor />
+      </div>
+    );
+  if (!data)
+    return (
+      <div className="text-retro-fg-dim font-mono text-sm">
+        [ERR] Connection refused: api.coingecko.com:443
+      </div>
+    );
+  return (
+    <div className="space-y-2">
+      {Object.entries(data).map(([coin, d]) => {
+        const up = d.usd_24h_change > 0;
+        return (
+          <div
+            key={coin}
+            className="bevel-in flex justify-between items-center px-2 py-1 font-mono text-sm"
+          >
+            <span className="text-retro-fg capitalize">{coin}</span>
+            <span className="text-retro-fg font-bold">
+              ${d.usd.toLocaleString()}
+            </span>
+            <span
+              style={{ color: up ? "#00ff88" : "#ff4444" }}
+              className="flex items-center gap-1 text-xs"
+            >
+              {up ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+              {Math.abs(d.usd_24h_change).toFixed(2)}%
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const GithubRepos = ({ repos, loading }) => {
+  if (loading)
+    return (
+      <div className="text-retro-fg-dim font-mono text-sm">
+        $ git fetch github<BlinkingCursor />
+      </div>
+    );
+  return (
+    <div className="space-y-2">
+      {repos.map((repo) => (
+        <a
+          key={repo.id}
+          href={repo.html_url}
+          target="_blank"
+          rel="noreferrer"
+          className="bevel-out block p-2 no-underline hover:bg-retro-chrome hover:text-retro-chrome-fg"
+        >
+          <div className="flex justify-between items-start">
+            <div className="flex gap-2 items-center">
+              <Github className="w-3 h-3 shrink-0" aria-hidden />
+              <span className="font-mono text-sm font-bold text-retro-fg">
+                {repo.name}
+              </span>
+            </div>
+            <ExternalLink className="w-3 h-3 shrink-0 text-retro-fg-dim" aria-hidden />
+          </div>
+          {repo.description && (
+            <p className="text-retro-fg-dim font-mono text-xs mt-1 line-clamp-2">
+              {repo.description}
+            </p>
+          )}
+          <div className="flex gap-3 mt-1 font-mono text-xs text-retro-fg-dim">
+            {repo.language && <span>● {repo.language}</span>}
+            <span>⭐ {repo.stargazers_count}</span>
+          </div>
+        </a>
+      ))}
     </div>
   );
 };
 
 const HomePage = () => {
-  // States
+  useSeoMeta({
+    title: "Home",
+    description: "Nilesh Verma — Cloud Specialist / Solutions Architect at Niveus Solutions. Specialising in AWS, GCP, Azure, Kubernetes, and Terraform.",
+    path: "/",
+  });
+  const [bootDone, setBootDone] = useState(() => {
+    try { return localStorage.getItem("nilesh.sys.booted") === "1"; }
+    catch { return true; }
+  });
+  const [visitorCount, setVisitorCount] = useState(null);
   const [repos, setRepos] = useState([]);
-  const [loadingRepos, setLoadingRepos] = useState(true);
+  const [reposLoading, setReposLoading] = useState(true);
+  const [crypto, setCrypto] = useState(null);
+  const [cryptoLoading, setCryptoLoading] = useState(true);
 
-  const [cryptoData, setCryptoData] = useState(null);
-  const [loadingCrypto, setLoadingCrypto] = useState(true);
-
-  const [apod, setApod] = useState(null);
-
-  // Scroll logic for Hero
-  const { scrollYProgress: heroScroll } = useScroll();
-  const heroY = useTransform(heroScroll, [0, 1], ["0%", "50%"]);
-  const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
-
-  // Scroll logic for NASA Parallax
-  const nasaRef = useRef(null);
-  const { scrollYProgress: nasaScroll } = useScroll({ target: nasaRef, offset: ["start end", "end start"] });
-  const nasaY = useTransform(nasaScroll, [0, 1], ["-20%", "20%"]);
+  // Typewriter hook — starts only after boot sequence completes
+  const { displayed: taglineText } = useTypewriter(TAGLINE, {
+    speed: 22,
+    startDelay: 200,
+    enabled: bootDone,
+  });
+  const { displayed: introText, done: introDone } = useTypewriter(INTRO, {
+    speed: 12,
+    startDelay: bootDone ? 400 : 0,
+    enabled: bootDone,
+  });
 
   useEffect(() => {
-    // 1. Fetch GitHub
-    fetch('https://api.github.com/users/nileshcf/repos?sort=updated&per_page=2')
-      .then(res => res.json())
-      .then(data => { setRepos(data); setLoadingRepos(false); })
-      .catch(() => setLoadingRepos(false));
+    // Read visitor count written by Sidebar
+    const t = setTimeout(() => {
+      try {
+        const n = parseInt(localStorage.getItem(VISITOR_KEY) || "0", 10);
+        setVisitorCount(n || 41328);
+      } catch { setVisitorCount(41328); }
+    }, 100);
+    return () => clearTimeout(t);
+  }, []);
 
-    // 2. Fetch CoinGecko
-    fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true')
-      .then(res => res.json())
-      .then(data => { setCryptoData(data); setLoadingCrypto(false); })
-      .catch(() => setLoadingCrypto(false));
+  useEffect(() => {
+    fetch("https://api.github.com/users/nileshcf/repos?sort=updated&per_page=4")
+      .then((r) => r.json())
+      .then((d) => { setRepos(Array.isArray(d) ? d : []); setReposLoading(false); })
+      .catch(() => setReposLoading(false));
 
-    // 3. Fetch NASA APOD
-    fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
-      .then(res => res.json())
-      .then(data => setApod(data))
-      .catch(console.error);
+    fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true"
+    )
+      .then((r) => r.json())
+      .then((d) => { setCrypto(d); setCryptoLoading(false); })
+      .catch(() => setCryptoLoading(false));
   }, []);
 
   return (
-    <div className="min-h-screen bg-apple-dark overflow-hidden">
-      
-      {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#1d1d1f] z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" 
-            alt="Cyber technology circuit background" 
-            className="w-full h-full object-cover scale-105"
-          />
-        </motion.div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6">
-              Engineering <br />
-              <span className="text-gradient">The Extraordinary.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-apple-gray font-medium max-w-2xl mx-auto -tracking-wide">
-              DevOps Engineer • Cloud Enthusiast • Full-Stack Explorer
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Scroll Reveal Text */}
-      <ScrollRevealText text="I bridge the gap between development and operations through elegant infrastructure, building robust automated systems that scale effortlessly." />
-
-      {/* Bento Box Grid Section */}
-      <section className="py-24 max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            Recent Work. <span className="text-apple-gray">Live Data.</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
-          
-          {/* Bento Card 1: Bio */}
-          <div className="bento-card p-8 md:col-span-2 row-span-2 group">
-             <div className="flex flex-col h-full justify-between">
-                <div>
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-white/10 mb-6">
-                    <img 
-                      src={profilePic} 
-                      onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1531297172867-4f54130026e6?w=400&auto=format&fit=crop&q=80"; }}
-                      alt="Profile" 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
-                    />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Nilesh Verma</h3>
-                  <p className="text-apple-gray leading-relaxed text-lg max-w-md">
-                    Passionate about building reliable, scalable, and automated systems with a strong foundation in Java programming and modern infrastructure.
-                  </p>
-                </div>
-                <div className="mt-8 flex gap-4">
-                   <a href="/Nilesh_Verma_Resume.doc" download className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
-                      Download Resume
-                   </a>
-                   <a href="https://github.com/nileshcf" target="_blank" rel="noreferrer" className="bg-white/10 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
-                      GitHub
-                   </a>
-                </div>
-             </div>
-          </div>
-
-          {/* Bento Card 2: Live Crypto Tracker */}
-          <div className="bento-card p-6 flex flex-col justify-between group">
-             <div className="flex items-center gap-2 mb-4">
-               <Bitcoin className="text-yellow-500" />
-               <h3 className="text-lg font-bold text-white tracking-tight">Live Market</h3>
-             </div>
-             
-             {loadingCrypto ? (
-                <div className="animate-pulse space-y-4">
-                  <div className="h-12 bg-white/10 rounded w-full"></div>
-                  <div className="h-12 bg-white/10 rounded w-full"></div>
-                </div>
-             ) : cryptoData ? (
-                <div className="space-y-4 flex-1 flex flex-col justify-center">
-                  {Object.entries(cryptoData).map(([coin, data]) => {
-                    const isUp = data.usd_24h_change > 0;
-                    return (
-                      <div key={coin} className="flex justify-between items-center bg-black/40 p-3 rounded-xl border border-white/5">
-                        <div>
-                          <p className="text-sm text-apple-gray font-medium capitalize">{coin}</p>
-                          <p className="text-white font-mono font-bold">${data.usd.toLocaleString()}</p>
-                        </div>
-                        <div className={`flex items-center gap-1 text-xs font-bold ${isUp ? 'text-green-400' : 'text-red-400'}`}>
-                          {isUp ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-                          {Math.abs(data.usd_24h_change).toFixed(2)}%
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-             ) : (
-                <p className="text-apple-gray text-sm">Failed to load market data.</p>
-             )}
-          </div>
-
-          {/* Github Repo Cards (Fetch 2) */}
-          {loadingRepos ? (
-             <>
-               {[...Array(2)].map((_, i) => (
-                 <div key={i} className="bento-card p-6 animate-pulse">
-                   <div className="h-6 bg-white/10 rounded w-1/2 mb-4"></div>
-                   <div className="h-4 bg-white/5 rounded w-full mb-2"></div>
-                   <div className="h-4 bg-white/5 rounded w-3/4"></div>
-                 </div>
-               ))}
-             </>
-          ) : (
-             repos.slice(0, 2).map((repo) => (
-               <a 
-                 key={repo.id} 
-                 href={repo.html_url} 
-                 target="_blank" 
-                 rel="noreferrer"
-                 className="bento-card p-6 hover:bg-white/[0.03] transition-colors flex flex-col justify-between group"
-               >
-                 <div>
-                   <div className="flex justify-between items-start mb-4">
-                     <Github className="text-apple-gray group-hover:text-white transition-colors" />
-                     <ExternalLink className="w-4 h-4 text-apple-gray opacity-0 group-hover:opacity-100 transition-opacity" />
-                   </div>
-                   <h3 className="text-lg font-bold text-white mb-2 truncate">{repo.name}</h3>
-                   <p className="text-sm text-apple-gray line-clamp-2">
-                     {repo.description || "No description provided."}
-                   </p>
-                 </div>
-                 <div className="mt-4 flex items-center gap-3 text-xs font-mono text-apple-gray">
-                   {repo.language && (
-                     <span className="flex items-center gap-1">
-                       <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                       {repo.language}
-                     </span>
-                   )}
-                   <span>⭐ {repo.stargazers_count}</span>
-                 </div>
-               </a>
-             ))
-          )}
-
-          {/* Bento Card: Skills Grid */}
-          <div className="bento-card p-6 md:col-span-3 flex flex-col items-center justify-center bg-gradient-to-br from-[#1d1d1f] to-black">
-             <div className="w-full flex items-center justify-between mb-8 overflow-hidden">
-               <h3 className="text-xl font-bold text-white tracking-tight z-10">Tech Stack</h3>
-               <div className="h-px bg-white/10 flex-1 ml-6" />
-             </div>
-             <div className="flex flex-wrap gap-8 w-full justify-center opacity-80">
-                <SiKubernetes className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiDocker className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiJenkins className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiReact className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiPython className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiJavascript className="text-5xl text-white transition-transform hover:scale-110" />
-                <SiCplusplus className="text-5xl text-white transition-transform hover:scale-110" />
-                <Terminal className="text-5xl text-white transition-transform hover:scale-110" />
-                <Layers className="text-5xl text-white transition-transform hover:scale-110" />
-             </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* NASA APOD Parallax Explorer Section */}
-      <section ref={nasaRef} className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden border-t border-white/5 my-24">
-        {apod ? (
-          <>
-            <motion.div style={{ y: nasaY }} className="absolute inset-0 z-0">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1f] via-black/60 to-[#1d1d1f] z-10" />
-              <img 
-                src={apod.hdurl || apod.url} 
-                alt={apod.title} 
-                className="w-full h-full object-cover scale-125 saturate-150"
-              />
-            </motion.div>
-            
-            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="bg-black/40 backdrop-blur-md p-10 rounded-3xl border border-white/10"
+    <div className="space-y-4 py-2">
+      {/* ── ASCII Banner Hero ── */}
+      <BeveledPanel
+        title="nilesh.sys — v4.0.1-stable"
+        className="overflow-hidden"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 items-start">
+          {/* ── Left: ASCII + tagline + buttons ── */}
+          <div className="flex-1 min-w-0">
+            <div className="overflow-x-auto">
+              <pre
+                className="ascii text-retro-accent retro-flicker m-0"
+                style={{ fontSize: "clamp(7px, 1.1vw, 13px)", lineHeight: 1.15 }}
+                aria-label="ASCII art: Nilesh Verma"
               >
-                <p className="text-sm md:text-base font-semibold text-blue-400 tracking-widest uppercase mb-4">Astronomy Picture Of The Day</p>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-white mb-6">
-                  {apod.title}
-                </h2>
-                <p className="text-sm md:text-base text-apple-gray font-medium max-w-2xl mx-auto leading-relaxed line-clamp-4">
-                  {apod.explanation}
-                </p>
-                <p className="mt-8 text-xs text-apple-gray/60 font-mono">Powered by NASA Open APIs</p>
-              </motion.div>
+                {ASCII_NAME}
+              </pre>
             </div>
-          </>
-        ) : (
-          <div className="flex flex-col items-center justify-center w-full h-full text-apple-gray">
-             <div className="w-10 h-10 border-4 border-white/10 border-t-white/80 rounded-full animate-spin mb-4" />
-             <p>Establishing uplink to Cosmos...</p>
-          </div>
-        )}
-      </section>
 
+            {/* Tagline */}
+            <div className="mt-3 font-mono text-retro-fg text-sm sm:text-base min-h-[1.5em]">
+              {taglineText || (bootDone ? "" : "")}
+              {taglineText.length < TAGLINE.length && bootDone && (
+                <BlinkingCursor />
+              )}
+            </div>
+
+            {/* Visitor counter + buttons */}
+            <div className="mt-3 flex flex-wrap items-center gap-4">
+              <div className="bevel-in px-3 py-1 font-mono text-sm">
+                <span className="text-retro-fg-dim">visitor# </span>
+                <span className="text-retro-accent font-bold">
+                  {visitorCount != null
+                    ? String(visitorCount).padStart(7, "0")
+                    : "░░░░░░░"}
+                </span>
+              </div>
+              <a
+                href="/NileshResume.pdf"
+                download
+                className="bevel-out px-3 py-1 font-mono text-xs no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg flex items-center gap-2"
+              >
+                <Download className="w-3 h-3" aria-hidden />
+                $ wget resume.pdf
+              </a>
+              <a
+                href="https://github.com/nileshcf"
+                target="_blank"
+                rel="noreferrer"
+                className="bevel-out px-3 py-1 font-mono text-xs no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg flex items-center gap-2"
+              >
+                <Github className="w-3 h-3" aria-hidden />
+                github.nileshcf
+              </a>
+            </div>
+          </div>
+
+          {/* ── Right: profile photo ── */}
+          <div className="flex-shrink-0">
+            <div className="bevel-out p-1" style={{ display: "inline-block" }}>
+              <div className="font-mono text-xs text-center px-1 py-0.5 bg-retro-chrome text-retro-chrome-fg mb-1">
+                nilesh.jpg — eog
+              </div>
+              <img
+                src={profilePhoto}
+                alt="Nilesh Verma"
+                style={{
+                  width: 140,
+                  height: 160,
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  display: "block",
+                  filter: "contrast(1.05)",
+                }}
+              />
+              <div className="font-mono text-xs text-center text-retro-fg-dim mt-1">
+                1 file · 140×160
+              </div>
+            </div>
+          </div>
+        </div>
+      </BeveledPanel>
+
+      {/* ── About ── */}
+      <BeveledPanel title="about.txt">
+        <div className="font-mono text-sm">
+          <div className="text-retro-fg-dim mb-2">$ cat about.txt</div>
+          <p className="text-retro-fg leading-relaxed min-h-[4em]">
+            {introText}
+            {!introDone && bootDone && <BlinkingCursor />}
+          </p>
+        </div>
+      </BeveledPanel>
+
+      {/* ── Currently + Winamp ── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <BeveledPanel title="currently.log">
+          <CurrentlyWidget />
+        </BeveledPanel>
+
+        <BeveledPanel title="winamp.exe" bodyClassName="flex justify-center">
+          <WinampWidget />
+        </BeveledPanel>
+      </div>
+
+      {/* ── GitHub Repos ── */}
+      <BeveledPanel title="github_repos.sh">
+        <div className="font-mono text-xs text-retro-fg-dim mb-2">
+          $ git ls-remote https://github.com/nileshcf —heads
+        </div>
+        <GithubRepos repos={repos} loading={reposLoading} />
+      </BeveledPanel>
+
+      {/* ── Skills ── */}
+      <BeveledPanel title="skills.d — ls -la /skills/">
+        <div className="font-mono text-xs text-retro-fg-dim mb-1">
+          $ ls -la /home/nilesh/skills/
+        </div>
+        <div className="font-mono text-xs text-retro-fg-dim mb-2">
+          total {skills.length * 8}
+        </div>
+        <div className="overflow-x-auto">
+          <div className="min-w-[520px]">
+            <div className="flex gap-2 px-1 pb-1 border-b-2 border-retro-border-dark font-mono text-xs text-retro-fg-dim">
+              <span className="w-28">perms</span>
+              <span className="w-4">ln</span>
+              <span className="w-12">owner</span>
+              <span className="w-10">group</span>
+              <span className="w-10 text-right">size</span>
+              <span className="w-24">date</span>
+              <span>name</span>
+            </div>
+            {skills.map((s) => (
+              <SkillRow key={s.name} {...s} />
+            ))}
+          </div>
+        </div>
+      </BeveledPanel>
+
+      {/* ── Live Market ── */}
+      <BeveledPanel title="live_market.dat">
+        <div className="font-mono text-xs text-retro-fg-dim mb-2">
+          $ curl api.coingecko.com/v3/simple/price
+        </div>
+        <CryptoTicker data={crypto} loading={cryptoLoading} />
+      </BeveledPanel>
+
+      {/* ── Interactive Terminal ── */}
+      <BeveledPanel title="terminal.sh — interactive shell">
+        <Terminal height={460} />
+      </BeveledPanel>
     </div>
   );
 };
