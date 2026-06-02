@@ -1,5 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow: /love
 
-Sitemap: https://portfolio-nileshcfs-projects.vercel.app/sitemap.xml
+Sitemap: https://nileshvermaaresume.vercel.app/sitemap.xml

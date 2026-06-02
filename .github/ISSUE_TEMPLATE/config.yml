@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Live portfolio
+    url: https://nileshvermaaresume.vercel.app/
+    about: See the live site before filing an issue.
+  - name: Contact Nilesh directly
+    url: https://nileshvermaaresume.vercel.app/contact
+    about: For anything not a bug — collaboration, roles, general questions.

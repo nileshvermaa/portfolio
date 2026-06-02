@@ -1,0 +1,54 @@
+name: Feature Request
+description: Suggest an idea or enhancement
+labels: [enhancement]
+assignees: [nileshcf]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea? Describe it here — the more detail, the better.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature summary
+      description: One or two sentences describing the feature.
+      placeholder: "e.g. Add a dark-mode toggle that persists across sessions."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this useful?
+      description: What problem does it solve, or what experience does it improve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: How would you implement this? (Optional — even a rough idea helps.)
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you thought of?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      options:
+        - Nice to have
+        - Important
+        - Critical / blocking
+    validations:
+      required: true

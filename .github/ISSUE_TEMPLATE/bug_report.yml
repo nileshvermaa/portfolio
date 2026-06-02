@@ -1,0 +1,90 @@
+name: Bug Report
+description: Something is broken or looks wrong
+labels: [bug, triage]
+assignees: [nileshcf]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Fill in as much detail as you can.
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Which page is affected?
+      placeholder: "e.g. https://nileshvermaaresume.vercel.app/projects"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+      placeholder: "e.g. The theme switcher doesn't apply the Amber theme — background stays black."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How do we trigger the bug?
+      placeholder: |
+        1. Open the site
+        2. Click View → Theme: Amber
+        3. Background colour does not change
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      placeholder: "Background should change to #FFF8E7"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      multiple: true
+      options:
+        - Chrome / Chromium
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / screen recording
+      description: Drag and drop images here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: Paste any errors from the browser DevTools console (F12).
+      render: text
+    validations:
+      required: false

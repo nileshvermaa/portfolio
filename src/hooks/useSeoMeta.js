@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 
 const SITE_NAME = "NILESH.SYS";
-const BASE_URL = "https://portfolio-nileshcfs-projects.vercel.app";
+const BASE_URL = "https://nileshvermaaresume.vercel.app";
 
 function setMeta(selector, attr, value) {
   let el = document.querySelector(selector);

@@ -149,6 +149,45 @@ export const projects = [
       },
     ],
   },
+  {
+    slug: "ats-resume-builder",
+    title: "ATS Resume Builder",
+    filename: "resume-builder.tsx",
+    description:
+      "AI-powered ATS-optimised resume builder that analyses job descriptions, scores resume compatibility, and generates clean recruiter-ready PDFs.",
+    details: `A full-stack resume builder designed to beat Applicant Tracking Systems:
+- Paste any job description and get an instant ATS compatibility score with keyword gap analysis.
+- Build your resume section-by-section using a live editor — changes reflect in a real-time PDF preview.
+- AI suggestions rewrite bullet points to match JD keywords without sounding robotic.
+- One-click export generates a clean, ATS-parseable PDF with no tables, columns, or graphics that confuse parsers.
+- Deployed on Vercel with edge-optimised serverless functions.`,
+    link: "https://nileshvermaaresume.vercel.app/",
+    tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Vercel"],
+    image:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2670&auto=format&fit=crop",
+    accordionItems: [
+      {
+        title: "ATS Score & Keyword Analysis",
+        content:
+          "Parses job descriptions to extract hard and soft skill keywords, then scores the resume against them — highlighting missing terms and overused filler phrases.",
+      },
+      {
+        title: "Live PDF Preview",
+        content:
+          "Resume sections are rendered in a side-by-side editor + preview layout. The PDF output uses a single-column, plain-text-friendly layout optimised for ATS parsers.",
+      },
+      {
+        title: "AI Bullet-Point Rewriter",
+        content:
+          "Integrates an AI layer that rewrites experience bullets to align with JD language while preserving factual accuracy — no hallucinations, just tone and keyword tuning.",
+      },
+      {
+        title: "One-Click Export",
+        content:
+          "Generates a pixel-perfect, ATS-safe PDF with correct heading hierarchy, no embedded images or columns, and proper Unicode — compatible with Workday, Greenhouse, and Lever.",
+      },
+    ],
+  },
 ];
 
 export default projects;
