@@ -156,16 +156,18 @@
   </tr>
   <tr>
     <td align="center" width="50%">
-      <h4>&#128221; ATS Resume Builder</h4>
+      <h4>&#128221; ATS Resume Builder &nbsp;<img src="https://img.shields.io/badge/-LIVE-00ff00?style=flat-square&labelColor=000000" /></h4>
       <p>Privacy-first, in-browser resume builder &mdash; live PDF preview, JD keyword analysis, ATS-safe PDF/DOCX export</p>
+      <a href="https://atsresumebuild.vercel.app"><img src="https://img.shields.io/badge/&#9654;_Live_Demo-atsresumebuild-00ff00?style=flat-square&labelColor=000000" /></a>
       <a href="https://github.com/nileshvermaa/resume-builder"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
       <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
       <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
       <img src="https://img.shields.io/badge/IndexedDB-FF6600?style=flat-square&logo=databricks&logoColor=white" />
     </td>
     <td align="center" width="50%">
-      <h4>&#127902; Prags.pov &mdash; Cinematic 3D Portfolio</h4>
-      <p>Dark-noir 3D portfolio &mdash; liquid-metal WebGL hero, film grain, Lenis momentum scrolling</p>
+      <h4>&#127902; Prags.pov &mdash; Cinematic 3D Portfolio &nbsp;<img src="https://img.shields.io/badge/-LIVE-00ff00?style=flat-square&labelColor=000000" /></h4>
+      <p>Cinematic 3D portfolio &mdash; animated WebGL hero, film grain, Lenis momentum scrolling</p>
+      <a href="https://pragspov.vercel.app"><img src="https://img.shields.io/badge/&#9654;_Live_Demo-pragspov-00ff00?style=flat-square&labelColor=000000" /></a>
       <a href="https://github.com/nileshvermaa/content-creator"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
       <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white" />
       <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" />

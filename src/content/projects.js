@@ -94,9 +94,9 @@ export const projects = [
 - Export to both PDF and editable DOCX, with resume variants and version history you can roll back.
 - Optional AI assistance with a bring-your-own API key, plus full no-AI fallbacks.`,
     link: "https://github.com/nileshvermaa/resume-builder",
+    demo: "https://atsresumebuild.vercel.app",
     tech: ["TypeScript", "React", "Tailwind CSS"],
-    image:
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2670&auto=format&fit=crop",
+    image: "/projects/atsresumebuild.png",
     accordionItems: [
       {
         title: "100% in-browser & private",
@@ -120,7 +120,7 @@ export const projects = [
     title: "Prags.pov — Cinematic 3D Portfolio",
     filename: "prags-pov.app",
     description:
-      "A cinematic 3D portfolio website built for a content creator — dark-noir aesthetic, a liquid-metal WebGL hero, film grain, and buttery momentum scrolling.",
+      "A cinematic 3D portfolio website built for a content creator — an animated WebGL hero, film grain, and buttery-smooth momentum scrolling.",
     details: `A high-end, client-facing portfolio site with a film-like feel:
 - A 3D WebGL hero scene with an animated liquid-metal blob, halo effects, and particle fields (Three.js + React Three Fiber).
 - Smooth momentum scrolling powered by Lenis, with cinematic Framer Motion transitions throughout.
@@ -128,9 +128,9 @@ export const projects = [
 - The entire site's content lives in a single data file, so it's trivial to update.
 - Accessibility-first: reduced-motion support, keyboard navigation, and automated SEO (Open Graph, sitemap, robots).`,
     link: "https://github.com/nileshvermaa/content-creator",
+    demo: "https://pragspov.vercel.app",
     tech: ["React", "TypeScript", "Node.js"],
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop",
+    image: "/projects/pragspov.png",
     accordionItems: [
       {
         title: "WebGL hero scene",
