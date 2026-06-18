@@ -18,7 +18,7 @@
   &nbsp;
   <a href="mailto:nileshvermaq@gmail.com"><img src="https://img.shields.io/badge/Email-nileshvermaq-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=nileshcf&label=ðŸ‘ï¸+Visitors&color=00ff00&style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=nileshvermaa&label=ðŸ‘ï¸+Visitors&color=00ff00&style=for-the-badge" />
 </p>
 
 <br/>
@@ -60,7 +60,7 @@
 <h2 align="center">ðŸ† GitHub Trophies</h2>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=nileshcf&theme=matrix&no-frame=true&no-bg=true&margin-w=4&row=1" />
+  <img src="https://github-profile-trophy.vercel.app/?username=nileshvermaa&theme=matrix&no-frame=true&no-bg=true&margin-w=4&row=1" />
 </p>
 
 <br/>
@@ -69,15 +69,15 @@
 <h2 align="center">ðŸ“Š $ git log --stat</h2>
 
 <p align="center">
-  <img src="https://denvercoder1-github-readme-stats.vercel.app/api?username=nileshcf&show_icons=true&count_private=true&theme=chartreuse-dark&border_color=00ff00&bg_color=0d1117&title_color=00ff00&icon_color=00ff00&text_color=cccccc&border_radius=8" width="48%" />
+  <img src="https://denvercoder1-github-readme-stats.vercel.app/api?username=nileshvermaa&show_icons=true&count_private=true&theme=chartreuse-dark&border_color=00ff00&bg_color=0d1117&title_color=00ff00&icon_color=00ff00&text_color=cccccc&border_radius=8" width="48%" />
   &nbsp;
-  <img src="https://streak-stats.demolab.com/?user=nileshcf&theme=dark&background=0d1117&border=00ff00&stroke=00ff00&ring=00ff00&fire=ff6600&currStreakNum=ffffff&sideNums=00ff00&currStreakLabel=00ff00&sideLabels=cccccc&dates=888888" width="48%" />
+  <img src="https://streak-stats.demolab.com/?user=nileshvermaa&theme=dark&background=0d1117&border=00ff00&stroke=00ff00&ring=00ff00&fire=ff6600&currStreakNum=ffffff&sideNums=00ff00&currStreakLabel=00ff00&sideLabels=cccccc&dates=888888" width="48%" />
 </p>
 
 <p align="center">
-  <img src="https://denvercoder1-github-readme-stats.vercel.app/api/top-langs/?username=nileshcf&langs_count=8&layout=compact&theme=chartreuse-dark&border_color=00ff00&bg_color=0d1117&title_color=00ff00&text_color=cccccc&border_radius=8" width="48%" />
+  <img src="https://denvercoder1-github-readme-stats.vercel.app/api/top-langs/?username=nileshvermaa&langs_count=8&layout=compact&theme=chartreuse-dark&border_color=00ff00&bg_color=0d1117&title_color=00ff00&text_color=cccccc&border_radius=8" width="48%" />
   &nbsp;
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=nileshcf&theme=github_dark&utcOffset=5.5" width="48%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=nileshvermaa&theme=github_dark&utcOffset=5.5" width="48%" />
 </p>
 
 <br/>
@@ -106,7 +106,7 @@
 <h2 align="center">ðŸ“ˆ $ tail -f contribution.log</h2>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nileshcf&custom_title=Nilesh%20Verma%20%E2%80%94%20contribution.log&bg_color=0d1117&color=00ff00&line=00ff00&point=ffffff&area=true&area_color=00ff00&border_color=00ff00" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nileshvermaa&custom_title=Nilesh%20Verma%20%E2%80%94%20contribution.log&bg_color=0d1117&color=00ff00&line=00ff00&point=ffffff&area=true&area_color=00ff00&border_color=00ff00" />
 </p>
 
 <br/>
@@ -116,9 +116,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nileshcf/activity-sync/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nileshcf/activity-sync/output/github-contribution-grid-snake.svg" />
-    <img alt="contribution snake" src="https://raw.githubusercontent.com/nileshcf/activity-sync/output/github-contribution-grid-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nileshvermaa/activity-sync/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nileshvermaa/activity-sync/output/github-contribution-grid-snake.svg" />
+    <img alt="contribution snake" src="https://raw.githubusercontent.com/nileshvermaa/activity-sync/output/github-contribution-grid-snake.svg" />
   </picture>
 </p>
 
@@ -136,50 +136,57 @@
 <table align="center">
   <tr>
     <td align="center" width="50%">
-      <h4>â˜ï¸ Sandbox for Codenavigator</h4>
-      <p>Cloud-native developer environment with dynamic provisioning</p>
-      <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws" />
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-      <img src="https://img.shields.io/badge/K8s-326CE5?style=flat-square&logo=kubernetes&logoColor=white" />
+      <h4>&#9729;&#65039; CloudCraft Studio &nbsp;<img src="https://img.shields.io/badge/-LIVE-00ff00?style=flat-square&labelColor=000000" /></h4>
+      <p>Gamified cloud-architecture simulator &mdash; build a stack, pour 1M RPS of traffic on it, watch where it breaks</p>
+      <a href="https://cloudcraft-smoky.vercel.app"><img src="https://img.shields.io/badge/&#9654;_Live_Demo-cloudcraft-00ff00?style=flat-square&labelColor=000000" /></a>
+      <a href="https://github.com/nileshvermaa/cloudcraft"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
+      <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" />
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+      <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
     </td>
     <td align="center" width="50%">
-      <h4>âš™ï¸ Dynamic Jenkins CI/CD Pipeline</h4>
-      <p>Multi-branch pipeline with Docker, SonarQube, auto-deploy</p>
+      <h4>&#128196; AeroPDF &mdash; PDF Editor &nbsp;<img src="https://img.shields.io/badge/-LIVE-00ff00?style=flat-square&labelColor=000000" /></h4>
+      <p>Browser-based PDF editor &mdash; edit real PDF text, add Figma-style overlays, client-side OCR, full undo/redo</p>
+      <a href="https://proeditorfree.vercel.app"><img src="https://img.shields.io/badge/&#9654;_Live_Demo-aeropdf-00ff00?style=flat-square&labelColor=000000" /></a>
+      <a href="https://github.com/nileshvermaa/pdf-editor"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
+      <img src="https://img.shields.io/badge/React-61DBFB?style=flat-square&logo=react&logoColor=black" />
+      <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+      <img src="https://img.shields.io/badge/PyMuPDF-1A73E8?style=flat-square&logo=python&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <h4>&#128221; ATS Resume Builder</h4>
+      <p>Privacy-first, in-browser resume builder &mdash; live PDF preview, JD keyword analysis, ATS-safe PDF/DOCX export</p>
+      <a href="https://github.com/nileshvermaa/resume-builder"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+      <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
+      <img src="https://img.shields.io/badge/IndexedDB-FF6600?style=flat-square&logo=databricks&logoColor=white" />
+    </td>
+    <td align="center" width="50%">
+      <h4>&#127902; Prags.pov &mdash; Cinematic 3D Portfolio</h4>
+      <p>Dark-noir 3D portfolio &mdash; liquid-metal WebGL hero, film grain, Lenis momentum scrolling</p>
+      <a href="https://github.com/nileshvermaa/content-creator"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
+      <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white" />
+      <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" />
+      <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <h4>&#9729;&#65039; Sandbox for Codenavigator</h4>
+      <p>Automated on-demand demo environments &mdash; WordPress UI &rarr; Express &rarr; Jenkins &rarr; Docker deploy</p>
       <img src="https://img.shields.io/badge/Jenkins-D33833?style=flat-square&logo=jenkins&logoColor=white" />
       <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-      <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <h4>ðŸ” Java Event-Driven Debugger</h4>
-      <p>Async event processing debugger backend with observability</p>
       <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" />
-      <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white" />
-      <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apache-kafka&logoColor=white" />
     </td>
     <td align="center" width="50%">
-      <h4>ðŸŒ NILESH.SYS Portfolio</h4>
-      <p>Retro hacker-aesthetic portfolio â€” 4 themes, terminal, Matrix rain</p>
+      <h4>&#127760; NILESH.SYS Portfolio &nbsp;<img src="https://img.shields.io/badge/-LIVE-00ff00?style=flat-square&labelColor=000000" /></h4>
+      <p>This retro hacker-aesthetic portfolio &mdash; 4 themes, interactive terminal, Matrix rain, live radio</p>
+      <a href="https://nileshvermaaresume.vercel.app"><img src="https://img.shields.io/badge/&#9654;_Live_Demo-nilesh.sys-00ff00?style=flat-square&labelColor=000000" /></a>
+      <a href="https://github.com/nileshvermaa/portfolio"><img src="https://img.shields.io/badge/Source-181717?style=flat-square&logo=github&logoColor=white" /></a><br/>
       <img src="https://img.shields.io/badge/React-61DBFB?style=flat-square&logo=react&logoColor=black" />
       <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
-      <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" />
-    </td>
-  </tr>
-    </td>
-  </tr>
-  <tr>
-    <td align=center width=50%>
-      <h4>&#128196; ATS Resume Builder</h4>
-      <p>AI-powered resume builder with ATS scoring, keyword gap analysis &amp; PDF export</p>
-      <a href=https://nileshvermaaresume.vercel.app/><img src=https://img.shields.io/badge/Live_Demo-nileshvermaaresume-00ff00?style=flat-square&amp;labelColor=000000 /></a><br/>
-      <img src=https://img.shields.io/badge/React-61DBFB?style=flat-square&amp;logo=react&amp;logoColor=black />
-      <img src=https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&amp;logo=typescript&amp;logoColor=white />
-      <img src=https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&amp;logo=tailwindcss&amp;logoColor=white />
-      <img src=https://img.shields.io/badge/Vercel-000000?style=flat-square&amp;logo=vercel&amp;logoColor=white />
-    </td>
-    <td align=center width=50%>
-      <!-- reserved for next project -->
     </td>
   </tr>
 </table>
@@ -200,12 +207,12 @@
 <summary><b>ðŸ“Š $ cat /var/log/github-summary.log</b></summary>
 <br/>
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nileshcf&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nileshvermaa&theme=github_dark" />
 </p>
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nileshcf&theme=github_dark" width="32%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nileshcf&theme=github_dark" width="32%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=nileshcf&theme=github_dark" width="32%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nileshvermaa&theme=github_dark" width="32%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nileshvermaa&theme=github_dark" width="32%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=nileshvermaa&theme=github_dark" width="32%" />
 </p>
 </details>
 

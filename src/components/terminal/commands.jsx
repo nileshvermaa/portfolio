@@ -208,7 +208,7 @@ const ContactOutput = () => (
     <Sep />
     {[
       ["email", "nileshvermaq@gmail.com", "mailto:nileshvermaq@gmail.com"],
-      ["github", "github.com/nileshcf", "https://github.com/nileshcf"],
+      ["github", "github.com/nileshvermaa", "https://github.com/nileshvermaa"],
       [
         "linkedin",
         "linkedin.com/in/nileshvermaa",

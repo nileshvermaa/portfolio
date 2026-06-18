@@ -30,7 +30,7 @@ const ASCII_NAME = `
    ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝`;
 
 const TAGLINE =
-  "> WELCOME TO NILESH.SYS — CLOUD SPECIALIST // SOLUTIONS ARCHITECT // NIVEUS SOLUTIONS";
+  "> Hi, I'm Nilesh — Cloud Specialist & Solutions Architect at Niveus Solutions.";
 
 const INTRO =
   "Passionate about designing scalable cloud architectures that solve real business problems. " +
@@ -165,13 +165,26 @@ const GithubRepos = ({ repos, loading }) => {
   );
 };
 
+/* Plain-language heading shown inside a retro panel — the "clarity layer"
+   that sits alongside the terminal-style window titles and command lines. */
+const SectionHeading = ({ children, sub }) => (
+  <div className="mb-2">
+    <h2 className="font-sys text-retro-accent text-base sm:text-lg font-bold tracking-wide">
+      {children}
+    </h2>
+    {sub && (
+      <p className="text-retro-fg-dim text-xs font-mono mt-0.5">{sub}</p>
+    )}
+  </div>
+);
+
 const HomePage = () => {
   useSeoMeta({
     title: "Home",
     description: "Nilesh Verma — Cloud Specialist / Solutions Architect at Niveus Solutions. Specialising in AWS, GCP, Azure, Kubernetes, and Terraform.",
     path: "/",
   });
-  const [bootDone, setBootDone] = useState(() => {
+  const [bootDone] = useState(() => {
     try { return localStorage.getItem("nilesh.sys.booted") === "1"; }
     catch { return true; }
   });
@@ -205,7 +218,7 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/nileshcf/repos?sort=updated&per_page=4")
+    fetch("https://api.github.com/users/nileshvermaa/repos?sort=updated&per_page=4")
       .then((r) => r.json())
       .then((d) => { setRepos(Array.isArray(d) ? d : []); setReposLoading(false); })
       .catch(() => setReposLoading(false));
@@ -262,16 +275,16 @@ const HomePage = () => {
                 className="bevel-out px-3 py-1 font-mono text-xs no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg flex items-center gap-2"
               >
                 <Download className="w-3 h-3" aria-hidden />
-                $ wget resume.pdf
+                Download Résumé
               </a>
               <a
-                href="https://github.com/nileshcf"
+                href="https://github.com/nileshvermaa"
                 target="_blank"
                 rel="noreferrer"
                 className="bevel-out px-3 py-1 font-mono text-xs no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg flex items-center gap-2"
               >
                 <Github className="w-3 h-3" aria-hidden />
-                github.nileshcf
+                GitHub Profile
               </a>
             </div>
           </div>
@@ -280,7 +293,7 @@ const HomePage = () => {
           <div className="flex-shrink-0">
             <div className="bevel-out p-1" style={{ display: "inline-block" }}>
               <div className="font-mono text-xs text-center px-1 py-0.5 bg-retro-chrome text-retro-chrome-fg mb-1">
-                nilesh.jpg — eog
+                nilesh.jpg
               </div>
               <img
                 src={profilePhoto}
@@ -304,8 +317,8 @@ const HomePage = () => {
 
       {/* ── About ── */}
       <BeveledPanel title="about.txt">
+        <SectionHeading sub="$ cat about.txt">About Me</SectionHeading>
         <div className="font-mono text-sm">
-          <div className="text-retro-fg-dim mb-2">$ cat about.txt</div>
           <p className="text-retro-fg leading-relaxed min-h-[4em]">
             {introText}
             {!introDone && bootDone && <BlinkingCursor />}
@@ -316,27 +329,33 @@ const HomePage = () => {
       {/* ── Currently + Winamp ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <BeveledPanel title="currently.log">
+          <SectionHeading sub="what I'm up to right now">Currently</SectionHeading>
           <CurrentlyWidget />
         </BeveledPanel>
 
-        <BeveledPanel title="winamp.exe" bodyClassName="flex justify-center">
-          <WinampWidget />
+        <BeveledPanel title="winamp.exe" bodyClassName="">
+          <SectionHeading sub="optional — off by default, click ▶ to play">
+            Now Playing — Radio
+          </SectionHeading>
+          <div className="flex justify-center">
+            <WinampWidget />
+          </div>
         </BeveledPanel>
       </div>
 
       {/* ── GitHub Repos ── */}
       <BeveledPanel title="github_repos.sh">
-        <div className="font-mono text-xs text-retro-fg-dim mb-2">
-          $ git ls-remote https://github.com/nileshcf —heads
-        </div>
+        <SectionHeading sub="$ git ls-remote github.com/nileshvermaa">
+          Latest from GitHub
+        </SectionHeading>
         <GithubRepos repos={repos} loading={reposLoading} />
       </BeveledPanel>
 
       {/* ── Skills ── */}
       <BeveledPanel title="skills.d — ls -la /skills/">
-        <div className="font-mono text-xs text-retro-fg-dim mb-1">
-          $ ls -la /home/nilesh/skills/
-        </div>
+        <SectionHeading sub="$ ls -la /home/nilesh/skills/">
+          Skills &amp; Tools
+        </SectionHeading>
         <div className="font-mono text-xs text-retro-fg-dim mb-2">
           total {skills.length * 8}
         </div>
@@ -360,14 +379,17 @@ const HomePage = () => {
 
       {/* ── Live Market ── */}
       <BeveledPanel title="live_market.dat">
-        <div className="font-mono text-xs text-retro-fg-dim mb-2">
-          $ curl api.coingecko.com/v3/simple/price
-        </div>
+        <SectionHeading sub="$ curl api.coingecko.com — a little live data, just for fun">
+          Live Market
+        </SectionHeading>
         <CryptoTicker data={crypto} loading={cryptoLoading} />
       </BeveledPanel>
 
       {/* ── Interactive Terminal ── */}
       <BeveledPanel title="terminal.sh — interactive shell">
+        <SectionHeading sub="New here? Type “help” and press Enter to explore. (Totally optional!)">
+          Interactive Terminal
+        </SectionHeading>
         <Terminal height={460} />
       </BeveledPanel>
     </div>

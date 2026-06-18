@@ -75,7 +75,7 @@ const WinampWidget = () => {
     try {
       await audio.play();
       setPlaying(true);
-    } catch (e) {
+    } catch {
       setError("stream unavailable");
       setPlaying(false);
     } finally {

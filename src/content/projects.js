@@ -1,7 +1,154 @@
-// Project data — extracted verbatim from the previous Projects.jsx so
-// content survives the redesign. Edit here; pages render from this file.
+// Project data — pages render from this file. Edit here.
+//
+// Field reference:
+//   slug            unique id used for routing/expansion state
+//   title           human-readable project name (shown as the heading)
+//   filename        retro "ls" filename shown in the project list row
+//   description     one-line plain-language summary (HR-friendly)
+//   details         longer description (supports multi-line bullet text)
+//   link            GitHub repository URL ("#" if private/none)
+//   demo            live deployment URL — renders a "Launch Live Demo" button
+//   tech            array of tech-stack labels (rendered as badges)
+//   image           preview image (local screenshot in /public/projects or Unsplash)
+//   accordionItems  expandable "implementation details" sections
 
 export const projects = [
+  {
+    slug: "cloudcraft-studio",
+    title: "CloudCraft Studio",
+    filename: "cloudcraft.app",
+    description:
+      "A playful, browser-based cloud architecture simulator — drag service tiles onto a board, pour real traffic on your design, and watch where it breaks (and why).",
+    details: `CloudCraft Studio turns cloud architecture into a game anyone can play:
+- Build a system by dragging service tiles (load balancers, app servers, databases, caches) onto an isometric workbench.
+- Inject traffic loads of up to 1,000,000 requests/second and watch live dashboards for latency, throughput, availability, and cost.
+- Take on "mission" challenges with real-world constraints — SLA targets, budgets, and latency limits — and get scored on how resilient and efficient your design is.
+- A deterministic simulation engine means the same design always scores the same way, so it's fair and repeatable.`,
+    link: "https://github.com/nileshvermaa/cloudcraft",
+    demo: "https://cloudcraft-smoky.vercel.app",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    image: "/projects/cloudcraft.png",
+    accordionItems: [
+      {
+        title: "Drag-and-drop architecture board",
+        content:
+          "A free-form canvas (built on React Flow) lets you place and connect cloud service tiles. Each tile carries realistic capacity, latency, and cost characteristics.",
+      },
+      {
+        title: "Traffic simulation engine",
+        content:
+          "A deterministic engine pushes synthetic load through your topology and surfaces bottlenecks, dropped requests, and failure points in real time.",
+      },
+      {
+        title: "Mission mode & scoring",
+        content:
+          "Scenario-based missions add SLA, budget, and latency constraints. A scoring system rewards architectures that stay resilient and cost-efficient under pressure.",
+      },
+    ],
+  },
+  {
+    slug: "aeropdf-editor",
+    title: "AeroPDF — PDF Editor",
+    filename: "aeropdf.app",
+    description:
+      "A browser-based PDF editor that lets you edit existing PDF text directly and layer on new elements — text, shapes, signatures, images — Figma-style, with full undo/redo.",
+    details: `AeroPDF is a full PDF editing studio that runs in your browser:
+- Edit the actual text inside an existing PDF, with redaction and reflow — not just annotations on top.
+- Find-and-replace across a single page or the whole document.
+- Add overlay objects: text boxes, comments, signatures, images, and vector shapes, all freely positioned.
+- Run client-side OCR on scanned pages so even image-only PDFs become editable.
+- Reorder, rotate, duplicate, insert, and delete pages, then export a clean flattened PDF.`,
+    link: "https://github.com/nileshvermaa/pdf-editor",
+    demo: "https://proeditorfree.vercel.app",
+    tech: ["React", "TypeScript", "Python", "Node.js"],
+    image: "/projects/aeropdf.png",
+    accordionItems: [
+      {
+        title: "Direct PDF text editing",
+        content:
+          "Powered by PyMuPDF on a FastAPI backend, AeroPDF edits the real text objects inside a PDF — supporting redaction, reflow, and document-wide find-and-replace.",
+      },
+      {
+        title: "Figma-style overlay layer",
+        content:
+          "A React + PDF.js front end renders an editable overlay of text boxes, shapes, signatures, and images that flatten cleanly into the exported file.",
+      },
+      {
+        title: "In-browser OCR",
+        content:
+          "Tesseract.js runs OCR on scanned pages entirely client-side, turning image-only documents into searchable, editable text.",
+      },
+    ],
+  },
+  {
+    slug: "ats-resume-builder",
+    title: "ATS Resume Builder",
+    filename: "resume-builder.app",
+    description:
+      "A privacy-first resume builder that runs entirely in your browser — live PDF preview, job-description keyword analysis, and ATS-safe PDF/DOCX export. No data ever leaves your device.",
+    details: `An ATS-first resume builder focused on privacy and parse-ability:
+- Split-screen editor with a live, paginated preview that matches the exported file exactly.
+- ATS-safe by design — no tables, columns, or images that confuse applicant-tracking systems.
+- Import an existing resume from PDF or DOCX and auto-fill the editor.
+- Paste a job description for keyword-gap analysis — entirely on-device, nothing is uploaded.
+- Export to both PDF and editable DOCX, with resume variants and version history you can roll back.
+- Optional AI assistance with a bring-your-own API key, plus full no-AI fallbacks.`,
+    link: "https://github.com/nileshvermaa/resume-builder",
+    tech: ["TypeScript", "React", "Tailwind CSS"],
+    image:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2670&auto=format&fit=crop",
+    accordionItems: [
+      {
+        title: "100% in-browser & private",
+        content:
+          "All editing, parsing, and storage happen locally using IndexedDB — no backend, no uploads, no tracking. Your resume data never leaves the device.",
+      },
+      {
+        title: "Import & keyword tailoring",
+        content:
+          "pdfjs-dist and mammoth parse existing PDF/DOCX resumes for auto-fill. Paste a job description to see which keywords you're missing.",
+      },
+      {
+        title: "Dual export (PDF + DOCX)",
+        content:
+          "Exports to a clean, single-column ATS-safe PDF and an editable DOCX with matching page breaks — compatible with Workday, Greenhouse, and Lever.",
+      },
+    ],
+  },
+  {
+    slug: "prags-pov-portfolio",
+    title: "Prags.pov — Cinematic 3D Portfolio",
+    filename: "prags-pov.app",
+    description:
+      "A cinematic 3D portfolio website built for a content creator — dark-noir aesthetic, a liquid-metal WebGL hero, film grain, and buttery momentum scrolling.",
+    details: `A high-end, client-facing portfolio site with a film-like feel:
+- A 3D WebGL hero scene with an animated liquid-metal blob, halo effects, and particle fields (Three.js + React Three Fiber).
+- Smooth momentum scrolling powered by Lenis, with cinematic Framer Motion transitions throughout.
+- A dark "noir" visual design with film grain and a glass-morphism mobile navbar.
+- The entire site's content lives in a single data file, so it's trivial to update.
+- Accessibility-first: reduced-motion support, keyboard navigation, and automated SEO (Open Graph, sitemap, robots).`,
+    link: "https://github.com/nileshvermaa/content-creator",
+    tech: ["React", "TypeScript", "Node.js"],
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop",
+    accordionItems: [
+      {
+        title: "WebGL hero scene",
+        content:
+          "A Three.js / React Three Fiber scene renders an animated liquid-metal blob with halos and particle fields as the centrepiece of the landing page.",
+      },
+      {
+        title: "Cinematic motion",
+        content:
+          "Lenis drives smooth momentum scrolling while Framer Motion handles section reveals and transitions, giving the site a film-like pacing.",
+      },
+      {
+        title: "Single-file content model",
+        content:
+          "All copy, links, and media references live in one data file, so the whole site can be re-themed or updated without touching component code.",
+      },
+    ],
+  },
   {
     slug: "sandbox-codenavigator",
     title: "Sandbox for Codenavigator",
@@ -146,45 +293,6 @@ export const projects = [
         title: "Expense CRUD API",
         content:
           "Users can add, view, and delete expenses through authenticated API routes that interact with MongoDB collections.",
-      },
-    ],
-  },
-  {
-    slug: "ats-resume-builder",
-    title: "ATS Resume Builder",
-    filename: "resume-builder.tsx",
-    description:
-      "AI-powered ATS-optimised resume builder that analyses job descriptions, scores resume compatibility, and generates clean recruiter-ready PDFs.",
-    details: `A full-stack resume builder designed to beat Applicant Tracking Systems:
-- Paste any job description and get an instant ATS compatibility score with keyword gap analysis.
-- Build your resume section-by-section using a live editor — changes reflect in a real-time PDF preview.
-- AI suggestions rewrite bullet points to match JD keywords without sounding robotic.
-- One-click export generates a clean, ATS-parseable PDF with no tables, columns, or graphics that confuse parsers.
-- Deployed on Vercel with edge-optimised serverless functions.`,
-    link: "https://nileshvermaaresume.vercel.app/",
-    tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Vercel"],
-    image:
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2670&auto=format&fit=crop",
-    accordionItems: [
-      {
-        title: "ATS Score & Keyword Analysis",
-        content:
-          "Parses job descriptions to extract hard and soft skill keywords, then scores the resume against them — highlighting missing terms and overused filler phrases.",
-      },
-      {
-        title: "Live PDF Preview",
-        content:
-          "Resume sections are rendered in a side-by-side editor + preview layout. The PDF output uses a single-column, plain-text-friendly layout optimised for ATS parsers.",
-      },
-      {
-        title: "AI Bullet-Point Rewriter",
-        content:
-          "Integrates an AI layer that rewrites experience bullets to align with JD language while preserving factual accuracy — no hallucinations, just tone and keyword tuning.",
-      },
-      {
-        title: "One-Click Export",
-        content:
-          "Generates a pixel-perfect, ATS-safe PDF with correct heading hierarchy, no embedded images or columns, and proper Unicode — compatible with Workday, Greenhouse, and Lever.",
       },
     ],
   },

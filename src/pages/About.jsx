@@ -5,6 +5,19 @@ import { skills, certifications } from "../content/skills";
 import { useSeoMeta } from "../hooks/useSeoMeta";
 import profilePhoto from "../assets/Photo.jpeg";
 
+/* Plain-language heading — the "clarity layer" shown alongside the
+   retro window titles so non-technical visitors instantly get each section. */
+const SectionHeading = ({ children, sub }) => (
+  <div className="mb-2">
+    <h2 className="font-sys text-retro-accent text-base sm:text-lg font-bold tracking-wide">
+      {children}
+    </h2>
+    {sub && (
+      <p className="text-retro-fg-dim text-xs font-mono mt-0.5">{sub}</p>
+    )}
+  </div>
+);
+
 /* ── ASCII certification box ─────────────────────────────────────── */
 
 const CertBox = ({ cert }) => (
@@ -37,18 +50,15 @@ const About = () => {
   <div className="space-y-4 py-2">
     {/* ── Bio ── */}
     <BeveledPanel title="about.txt — cat /home/nilesh/about.txt">
+      <SectionHeading sub="$ cat /home/nilesh/about.txt">About Me</SectionHeading>
       <div className="font-mono text-sm space-y-3">
-        <div className="text-retro-fg-dim">
-          $ cat /home/nilesh/about.txt
-        </div>
-
         <div className="bevel-in p-3 space-y-3">
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             {/* ── Profile photo ── */}
             <div className="flex-shrink-0">
               <div className="bevel-out p-1" style={{ display: "inline-block" }}>
                 <div className="text-retro-fg-dim font-mono text-xs text-center px-1 py-0.5 bg-retro-chrome text-retro-chrome-fg mb-1">
-                  nilesh.jpg — eog
+                  nilesh.jpg
                 </div>
                 <img
                   src={profilePhoto}
@@ -123,9 +133,7 @@ const About = () => {
 
     {/* ── Skills ── */}
     <BeveledPanel title="skills.d — ls -la /home/nilesh/skills/">
-      <div className="font-mono text-xs text-retro-fg-dim mb-2">
-        $ ls -la /home/nilesh/skills/
-      </div>
+      <SectionHeading sub="$ ls -la /home/nilesh/skills/">Skills &amp; Tools</SectionHeading>
       <div className="font-mono text-xs text-retro-fg-dim mb-1">
         total {skills.length * 8}
       </div>
@@ -163,9 +171,7 @@ const About = () => {
     {/* ── Certifications ── */}
     {certifications?.length > 0 && (
       <BeveledPanel title="certifications.d — ls ~/certs/">
-        <div className="font-mono text-xs text-retro-fg-dim mb-3">
-          $ ls -la ~/certs/
-        </div>
+        <SectionHeading sub="$ ls -la ~/certs/">Certifications</SectionHeading>
         <div className="flex flex-wrap gap-4">
           {certifications.map((cert) => (
             <CertBox key={cert.name} cert={cert} />
@@ -176,13 +182,13 @@ const About = () => {
 
     {/* ── Contact ── */}
     <BeveledPanel title=".contact — cat ~/.contact">
+      <SectionHeading sub="$ cat ~/.contact">Get in Touch</SectionHeading>
       <div className="font-mono text-sm space-y-1">
-        <div className="text-retro-fg-dim text-xs mb-2">$ cat ~/.contact</div>
         {[
           ["email",    "nileshvermaq@gmail.com", "mailto:nileshvermaq@gmail.com"],
-          ["github",   "github.com/nileshcf",          "https://github.com/nileshcf"],
+          ["github",   "github.com/nileshvermaa",          "https://github.com/nileshvermaa"],
           ["linkedin", "linkedin.com/in/nileshvermaa",     "https://www.linkedin.com/in/nileshvermaa/"],
-          ["resume",   "wget resume.pdf",              "/NileshResume.pdf"],
+          ["resume",   "Download résumé (PDF)",        "/NileshResume.pdf"],
         ].map(([key, label, href]) => (
           <div key={key} className="flex gap-2">
             <span className="text-retro-fg-dim w-10 shrink-0">{key}:</span>

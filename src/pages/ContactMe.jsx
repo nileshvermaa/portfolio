@@ -333,7 +333,6 @@ const ContactMe = () => {
                     type="button"
                     onClick={reset}
                     className="bevel-out px-10 py-1 font-sys text-sm text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg"
-                    // eslint-disable-next-line jsx-a11y/no-autofocus
                     autoFocus
                   >
                     OK
@@ -354,9 +353,9 @@ const ContactMe = () => {
             label="nileshvermaq@gmail.com"
           />
           <SocialBtn
-            href="https://github.com/nileshcf"
+            href="https://github.com/nileshvermaa"
             icon={Github}
-            label="github.com/nileshcf"
+            label="github.com/nileshvermaa"
           />
           <SocialBtn
             href="https://www.linkedin.com/in/nileshvermaa/"

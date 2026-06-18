@@ -68,7 +68,7 @@ const Sidebar = () => {
       <BeveledPanel title="webring.html">
         <ul className="text-sm space-y-1 font-mono">
           <li>
-            ◀ <a href="https://github.com/nileshcf" target="_blank" rel="noreferrer">GitHub</a>
+            ◀ <a href="https://github.com/nileshvermaa" target="_blank" rel="noreferrer">GitHub</a>
           </li>
           <li>
             ● <a href="https://www.linkedin.com/in/nileshvermaa/" target="_blank" rel="noreferrer">LinkedIn</a>

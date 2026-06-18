@@ -52,7 +52,7 @@ const MENUS = [
       { label: "Copy email", action: "copy-email" },
       { label: "Copy page URL", action: "copy-url" },
       { label: "Find on page... (Ctrl+F)", action: "find" },
-      { label: "View source", href: "https://github.com/nileshcf/portfolio" },
+      { label: "View source", href: "https://github.com/nileshvermaa/portfolio" },
     ],
   },
   {
@@ -78,7 +78,7 @@ const MENUS = [
     label: "Contact",
     items: [
       { label: "Send message", to: "/contact" },
-      { label: "GitHub", href: "https://github.com/nileshcf" },
+      { label: "GitHub", href: "https://github.com/nileshvermaa" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/nileshvermaa/" },
     ],
   },

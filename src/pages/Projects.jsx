@@ -33,6 +33,12 @@ const BADGE_PALETTE = {
   "Node.js":   { bg: "#339933", fg: "#fff" },
   JDBC:        { bg: "#000080", fg: "#fff" },
   Concurrency: { bg: "#555",    fg: "#fff" },
+  TypeScript:  { bg: "#3178C6", fg: "#fff" },
+  "Tailwind CSS": { bg: "#06B6D4", fg: "#fff" },
+  "Three.js":  { bg: "#000",    fg: "#fff" },
+  Vercel:      { bg: "#000",    fg: "#fff" },
+  FastAPI:     { bg: "#009688", fg: "#fff" },
+  Express:     { bg: "#333",    fg: "#fff" },
 };
 
 const Badge = ({ label }) => {
@@ -128,6 +134,30 @@ const ReadmePanel = ({ project, onClose }) => (
         </button>
       </div>
 
+      {/* Preview image */}
+      {project.image && (
+        <div className="px-3 pt-2">
+          <div className="bevel-in p-1">
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src =
+                  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop";
+              }}
+              className="w-full h-44 object-cover object-top"
+            />
+          </div>
+          <div className="text-retro-fg-dim text-[10px] mt-1 font-mono">
+            {project.demo
+              ? "▸ live preview — click “Launch Live Demo” below"
+              : "preview.png"}
+          </div>
+        </div>
+      )}
+
       <div className="p-3 space-y-3 font-mono text-sm">
         {/* Title */}
         <div>
@@ -176,18 +206,31 @@ const ReadmePanel = ({ project, onClose }) => (
           </div>
         )}
 
-        {/* Link */}
-        {project.link && project.link !== "#" && (
-          <div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bevel-out px-3 py-1 no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg text-xs"
-            >
-              <ExternalLink className="w-3 h-3" aria-hidden />
-              View on GitHub
-            </a>
+        {/* Links: live demo + source */}
+        {(project.demo || (project.link && project.link !== "#")) && (
+          <div className="flex flex-wrap gap-2">
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bevel-out px-3 py-1 no-underline text-retro-accent font-bold hover:bg-retro-chrome hover:text-retro-chrome-fg text-xs"
+              >
+                <ExternalLink className="w-3 h-3" aria-hidden />
+                ▶ Launch Live Demo
+              </a>
+            )}
+            {project.link && project.link !== "#" && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bevel-out px-3 py-1 no-underline text-retro-fg hover:bg-retro-chrome hover:text-retro-chrome-fg text-xs"
+              >
+                <ExternalLink className="w-3 h-3" aria-hidden />
+                View on GitHub
+              </a>
+            )}
           </div>
         )}
       </div>
@@ -220,6 +263,14 @@ const ProjectRow = ({ project, selected, onSelect }) => {
           nilesh cloud May 23 2026
         </span>
         <span className="text-retro-accent font-bold">{project.filename}</span>
+        {project.demo && (
+          <span
+            className="shrink-0 text-[9px] font-bold px-1 leading-tight border border-retro-accent text-retro-accent"
+            title="Live demo available"
+          >
+            ● LIVE
+          </span>
+        )}
         <span className="text-retro-fg-dim hidden md:inline truncate">
           {" "}
           — {project.description.slice(0, 55)}…

@@ -79,7 +79,7 @@ All portfolio data lives in `src/content/`:
 
 ## Reporting bugs
 
-Use the **[Bug Report](https://github.com/nileshcf/portfolio/issues/new?template=bug_report.yml)** issue template. Include:
+Use the **[Bug Report](https://github.com/nileshvermaa/portfolio/issues/new?template=bug_report.yml)** issue template. Include:
 - The URL / page affected
 - Steps to reproduce
 - Browser and device
@@ -89,7 +89,7 @@ Use the **[Bug Report](https://github.com/nileshcf/portfolio/issues/new?template
 
 ## Requesting features
 
-Open a **[Feature Request](https://github.com/nileshcf/portfolio/issues/new?template=feature_request.yml)** issue. The retro/terminal aesthetic is intentional — new features should fit that style.
+Open a **[Feature Request](https://github.com/nileshvermaa/portfolio/issues/new?template=feature_request.yml)** issue. The retro/terminal aesthetic is intentional — new features should fit that style.
 
 ---
 

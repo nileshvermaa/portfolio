@@ -2,7 +2,7 @@
 
 # ◼ NILESH.SYS — Portfolio v4.0.1
 
-[![CI](https://github.com/nileshcf/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/nileshcf/portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/nileshvermaa/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/nileshvermaa/portfolio/actions/workflows/ci.yml)
 [![Vercel](https://img.shields.io/badge/deployed-Vercel-000000?logo=vercel&logoColor=white)](https://nileshvermaaresume.vercel.app/)
 [![React](https://img.shields.io/badge/React-19-61DBFB?logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -62,7 +62,7 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/nileshcf/portfolio.git
+git clone https://github.com/nileshvermaa/portfolio.git
 cd portfolio
 
 # 2. Install dependencies
