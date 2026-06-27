@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "x": 560,
+    "y": 30,
+    "w": 320,
+    "h": 60,
+    "opacity": 1,
+    "transform": "none",
+    "radius": "20px",
+    "fontSize": "16px"
+  },
+  "title": {
+    "x": 130,
+    "y": 294,
+    "w": 1180,
+    "h": 313.1875,
+    "opacity": 1,
+    "transform": "none",
+    "radius": "0px",
+    "fontSize": "174px"
+  },
+  "star": {
+    "x": 114,
+    "y": 233,
+    "w": 140,
+    "h": 140,
+    "opacity": 1,
+    "transform": "none",
+    "radius": "0px",
+    "fontSize": "16px"
+  },
+  "bolt": {
+    "x": 1166.048095703125,
+    "y": 489.0480651855469,
+    "w": 197.90380859375,
+    "h": 197.90383911132812,
+    "opacity": 1,
+    "transform": "matrix(0.961262, 0.275637, -0.275637, 0.961262, 0, 0)",
+    "radius": "0px",
+    "fontSize": "16px"
+  },
+  "avatar": {
+    "x": 620,
+    "y": 652,
+    "w": 200,
+    "h": 228,
+    "opacity": 1,
+    "transform": "matrix3d(-0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, -1, 0.000833333, 0, 0, 0, 1)",
+    "radius": "0px",
+    "fontSize": "16px"
+  },
+  "meta": {
+    "x": 130,
+    "y": 813,
+    "w": 1180,
+    "h": 68,
+    "opacity": 1,
+    "transform": "none",
+    "radius": "0px",
+    "fontSize": "16px"
+  },
+  "bodyHeight": 8291
+}

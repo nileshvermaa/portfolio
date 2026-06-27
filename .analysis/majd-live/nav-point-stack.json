@@ -1,0 +1,218 @@
+[
+  {
+    "tag": "DIV",
+    "text": "",
+    "cls": "framer-o5QbJ framer-1ufjso6 framer-v-1ufjso6",
+    "rect": {
+      "x": 820,
+      "y": 42,
+      "w": 44,
+      "h": 36
+    },
+    "cursor": "pointer"
+  },
+  {
+    "tag": "DIV",
+    "text": "",
+    "cls": "framer-sblw0g-container",
+    "rect": {
+      "x": 820,
+      "y": 42,
+      "w": 44,
+      "h": 36
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "Majd",
+    "cls": "framer-wx9wja",
+    "rect": {
+      "x": 576,
+      "y": 42,
+      "w": 288,
+      "h": 36
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "Majd",
+    "cls": "framer-4de5p1",
+    "rect": {
+      "x": 576,
+      "y": 42,
+      "w": 288,
+      "h": 36
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "Majd",
+    "cls": "framer-mosn3z",
+    "rect": {
+      "x": 560,
+      "y": 30,
+      "w": 320,
+      "h": 60
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "NAV",
+    "text": "Majd",
+    "cls": "framer-HdeBz framer-3C8PO framer-yLjQu framer-1m3j43o framer-v-yn1kj0",
+    "rect": {
+      "x": 560,
+      "y": 30,
+      "w": 320,
+      "h": 60
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "Majd",
+    "cls": "framer-14q8xyt-container",
+    "rect": {
+      "x": 560,
+      "y": 30,
+      "w": 320,
+      "h": 60
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "SOFTWARE ENGINEER©2026/CREATING SINCE 2020",
+    "cls": "framer-1w72cst",
+    "rect": {
+      "x": 130,
+      "y": 0,
+      "w": 1180,
+      "h": 900
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "SECTION",
+    "text": "SOFTWARE ENGINEER©2026/CREATING SINCE 2020",
+    "cls": "framer-1dddyte",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "SOFTWARE ENGINEER©2026/CREATING SINCE 2020Hey!I’m Majd, a builder based in Syria",
+    "cls": "framer-5fbs3x",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "",
+    "cls": "framer-1r7lg3i",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "",
+    "cls": "framer-1n4jd90",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "SOFTWARE ENGINEER©2026/CREATING SINCE 2020Hey!I’m Majd, a builder based in Syria",
+    "cls": "framer-vhlkdt",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1800
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "MAIN",
+    "text": "SOFTWARE ENGINEER©2026/CREATING SINCE 2020Hey!I’m Majd, a builder based in Syria",
+    "cls": "framer-1n1z6hi",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7173.59375
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": "Use for Free .rolling-text-inner-r5 { --font-size: 16px; --text: var(--token-2fc",
+    "cls": "framer-zpn31 framer-egmbj8",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7797.59375
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "DIV",
+    "text": ":root body { background: var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(2",
+    "cls": "",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7797.59375
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "BODY",
+    "text": ":root body { background: var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(2",
+    "cls": "",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7797.59375
+    },
+    "cursor": "auto"
+  },
+  {
+    "tag": "HTML",
+    "text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=d",
+    "cls": "lenis",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7797.59375
+    },
+    "cursor": "auto"
+  }
+]

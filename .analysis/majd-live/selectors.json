@@ -1,0 +1,249 @@
+{
+  "fixed": [
+    {
+      "tag": "A",
+      "text": "Use for Free .rolling-text-inner-r7 { --font-size: 16px; --text: var(--token-2fc",
+      "rect": {
+        "x": 1260,
+        "y": 755.796875,
+        "width": 160,
+        "height": 35.203125,
+        "top": 755.796875,
+        "right": 1420,
+        "bottom": 791,
+        "left": 1260
+      },
+      "cls": "framer-1u5lwqx framer-3fmz9g"
+    },
+    {
+      "tag": "A",
+      "text": "More Templates .rolling-text-inner-r8 { --font-size: 16px; --text: var(--token-2",
+      "rect": {
+        "x": 1260,
+        "y": 798.796875,
+        "width": 160,
+        "height": 35.203125,
+        "top": 798.796875,
+        "right": 1420,
+        "bottom": 834,
+        "left": 1260
+      },
+      "cls": "framer-1ppydaa framer-3fmz9g"
+    },
+    {
+      "tag": "DIV",
+      "text": "Majd",
+      "rect": {
+        "x": 560,
+        "y": 30.01070213317871,
+        "width": 320,
+        "height": 60,
+        "top": 30.01070213317871,
+        "right": 880,
+        "bottom": 90.01070213317871,
+        "left": 560
+      },
+      "cls": "framer-14q8xyt-container"
+    },
+    {
+      "tag": "DIV",
+      "text": "Create a free website with Framer, the website builder loved by startups, design",
+      "rect": {
+        "x": 0,
+        "y": 822,
+        "width": 1440,
+        "height": 78,
+        "top": 822,
+        "right": 1440,
+        "bottom": 900,
+        "left": 0
+      },
+      "cls": ""
+    }
+  ],
+  "textHits": [
+    {
+      "needle": "Software Engineer",
+      "found": false
+    },
+    {
+      "needle": "Hey!",
+      "found": true,
+      "tag": "DIV",
+      "text": "Hey!",
+      "rect": {
+        "x": 130,
+        "y": 1320.8125,
+        "w": 300,
+        "h": 76
+      },
+      "className": "framer-1027jxs"
+    },
+    {
+      "needle": "Services",
+      "found": true,
+      "tag": "DIV",
+      "text": "Services",
+      "rect": {
+        "x": 130,
+        "y": 3170,
+        "w": 1180,
+        "h": 76
+      },
+      "className": "framer-1nuet6a"
+    },
+    {
+      "needle": "Featured Projects",
+      "found": true,
+      "tag": "DIV",
+      "text": "Featured Projects",
+      "rect": {
+        "x": 130,
+        "y": 3964,
+        "w": 460,
+        "h": 152
+      },
+      "className": "framer-16hn49o"
+    },
+    {
+      "needle": "Let's talk",
+      "found": false
+    }
+  ],
+  "images": [
+    {
+      "alt": "Portrait of portfolio creator – back view",
+      "src": "https://framerusercontent.com/images/haSjyjpt7FyCjJUBvXtmzCMSEQg.png?scale-down-to=1024&width=800&height=1072",
+      "rect": {
+        "x": 620,
+        "y": 652,
+        "w": 200,
+        "h": 228
+      },
+      "className": ""
+    },
+    {
+      "alt": "Portrait of portfolio creator – front view",
+      "src": "https://framerusercontent.com/images/haSjyjpt7FyCjJUBvXtmzCMSEQg.png?scale-down-to=1024&width=800&height=1072",
+      "rect": {
+        "x": 620,
+        "y": 652,
+        "w": 200,
+        "h": 228
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/lIIjRX5gxRdY7UWw5wqIXicPOA.png?scale-down-to=512&width=2550&height=2550",
+      "rect": {
+        "x": 1147.064453125,
+        "y": 507.6689453125,
+        "w": 197.87109375,
+        "h": 197.87103271484375
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/OLDYsHB9RMavvQrkVRNy08ZXYE.png?scale-down-to=512&width=2550&height=2550",
+      "rect": {
+        "x": 114,
+        "y": 233.41696166992188,
+        "w": 140,
+        "h": 140
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/VNXQLcPHw9VbVzy6BDpZ8pUsaU.png?scale-down-to=1024&width=1160&height=800",
+      "rect": {
+        "x": 130,
+        "y": 4196,
+        "w": 582,
+        "h": 401.375
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/WgEHVRrQs62rgxlzrnXJJ8rr4.png?scale-down-to=1024&width=1160&height=800",
+      "rect": {
+        "x": 728,
+        "y": 4196,
+        "w": 582,
+        "h": 401.375
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/I3azeVtkvdKBGl9TX38tUdXEb0.png?scale-down-to=1024&width=1160&height=800",
+      "rect": {
+        "x": 130,
+        "y": 4684.1875,
+        "w": 582,
+        "h": 401.375
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/e3DxUGJWqt7CIVVQIA0VZoy09FQ.png?scale-down-to=1024&width=1160&height=800",
+      "rect": {
+        "x": 728,
+        "y": 4684.1875,
+        "w": 582,
+        "h": 401.375
+      },
+      "className": ""
+    },
+    {
+      "alt": "man standing near balcony",
+      "src": "https://framerusercontent.com/images/kAftuUN9iRKwIt9M6RqZo9NS314.jpg?scale-down-to=1024&width=3840&height=5275",
+      "rect": {
+        "x": 342.515625,
+        "y": 5672.375,
+        "w": 50,
+        "h": 50
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MG7SSqT3AUbDDMeyGynYFWvAWI.png?width=160&height=160",
+      "rect": {
+        "x": 241.015625,
+        "y": 5542.375,
+        "w": 60,
+        "h": 60
+      },
+      "className": ""
+    },
+    {
+      "alt": "grayscale photo of man",
+      "src": "https://framerusercontent.com/images/HqoHkPp6dpJFdgMqUKIaAXmy7o.jpg?scale-down-to=512&width=3220&height=3220",
+      "rect": {
+        "x": 641.515625,
+        "y": 5672.375,
+        "w": 50,
+        "h": 50
+      },
+      "className": ""
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/yceQCLz3chOtgu2oZRjmfEKjY.png?width=160&height=160",
+      "rect": {
+        "x": 540.015625,
+        "y": 5542.375,
+        "w": 60,
+        "h": 60
+      },
+      "className": ""
+    }
+  ],
+  "title": "Majd",
+  "height": 7798
+}
